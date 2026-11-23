@@ -1,12 +1,12 @@
 {
  "name": "RAFIQ",
  "short_name": "RAFIQ",
- "description": "Personal money coach",
+ "description": "RAFIQ \u00b7 Money coach",
  "start_url": "./",
  "scope": "./",
  "display": "standalone",
- "background_color": "#FBF7F0",
- "theme_color": "#FBF7F0",
+ "background_color": "#F3F3EE",
+ "theme_color": "#F3F3EE",
  "icons": [
   {
    "src": "icon-192.png",

@@ -9,97 +9,92 @@
 <link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-180.png"><link rel="icon" href="icon-192.png"><meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>RAFIQ — Personal Finance OS</title>
 <style>
-:root{--bg:#FBF7F0;--card:#fff;--ink:#1B2440;--mut:#7B8197;--line:#EEE8DD;--acc:#17A884;--acc2:#E4F6EF;--sun:#FFC85C;--coral:#FF7A59;--sky:#5B8DEF;--lav:#9B7BF0;--bad:#E5533D;--warn:#E0961B;--good:#17A884;--bar:#F1ECE2;--hero:#1B2440;--lime:#C6F36B;--sh:0 2px 4px rgba(27,36,64,.03),0 12px 30px rgba(27,36,64,.07)}
-@media(prefers-color-scheme:dark){:root{--bg:#10131C;--card:#191D29;--ink:#EEF0F6;--mut:#9097AB;--line:#262B3A;--acc:#3CCB9F;--acc2:#16271F;--bar:#262B3A;--hero:#232A3F;--sh:none}}
+/* RAFIQ brand: Ink #0F1513 · Signal lime #C6F36B · Paper #F3F3EE · Graphite #5F6763 */
+:root{--bg:#F3F3EE;--card:#fff;--ink:#0F1513;--ink2:#26302B;--mut:#6A726D;--line:#E3E4DD;--lime:#C6F36B;--limeT:#5E8A12;--pos:#2B8A5E;--neg:#D2473A;--amb:#C9861A;--bad:#D2473A;--warn:#C9861A;--good:#2B8A5E;--acc:#0F1513;--acc2:#EEF6DF;--bar:#E9EAE4;--hero:#0F1513;--c1:#0F1513;--c2:#7FA33A;--c3:#4F6BD8;--c4:#D9822B;--c5:#8C6AD8;--c6:#9AA19D;--sh:0 1px 2px rgba(15,21,19,.04),0 8px 24px rgba(15,21,19,.06)}
+@media(prefers-color-scheme:dark){:root{--bg:#0A0C0B;--card:#141816;--ink:#EEF1EE;--ink2:#D3D8D4;--mut:#8D958F;--line:#242926;--acc2:#1C2614;--bar:#212622;--hero:#141816;--c1:#EEF1EE;--limeT:#C6F36B;--sh:none}}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 ui-rounded,"SF Pro Rounded",-apple-system,BlinkMacSystemFont,"Nunito","Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum"}
-.wrap{max-width:520px;margin:0 auto;padding:0 18px 120px}
-header{position:sticky;top:0;z-index:5;padding:calc(10px + env(safe-area-inset-top)) 0 8px;display:flex;align-items:center;gap:10px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
-.brand{display:flex;align-items:center;gap:9px;flex:1;font-weight:800;letter-spacing:.14em;font-size:15px}
-.pill{font-size:11.5px;color:var(--mut);display:inline-flex;align-items:center;gap:6px;max-width:42vw;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.pill:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--mut);flex:none}.pill.ok:before{background:var(--good)}.pill.warn:before{background:var(--warn)}
-.ib{border:none;background:var(--card);color:var(--ink);border-radius:50%;width:40px;height:40px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;box-shadow:var(--sh)}.ib svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
-.pg{margin:6px 2px 14px}.pg .ey,.ey{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}.pg h2{font-size:28px;letter-spacing:-.02em;margin:4px 0 0;font-weight:800}
-.card{background:var(--card);border-radius:28px;padding:18px;margin:0 0 14px;box-shadow:var(--sh)}
-@media(prefers-color-scheme:dark){.card,.tile,.task,.bt,details.acc,.dcard{border:1px solid var(--line)}}
-.card h3,details.acc h3{margin:0 0 10px;font-size:17px;font-weight:800}
-.mut{color:var(--mut)}.sm{font-size:13px}.pos{color:var(--good)}.neg{color:var(--bad)}.wrn{color:var(--warn)}
-.hero{background:var(--hero);color:#fff;border-radius:28px}.hero .mut,.hero .sm{color:rgba(255,255,255,.7)}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}.tile{background:var(--card);border-radius:22px;padding:14px;box-shadow:var(--sh)}.tile .l{font-size:12.5px;color:var(--mut)}.tile .v{font-size:21px;font-weight:800;margin-top:2px}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text","Inter","Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum","ss01"}
+h1,h2,h3,.big2,.num,.kv b{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter",sans-serif}
+.wrap{max-width:520px;margin:0 auto;padding:0 18px 118px}
+header{position:sticky;top:0;z-index:5;padding:calc(10px + env(safe-area-inset-top)) 0 10px;display:flex;align-items:center;gap:10px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.brand{display:flex;align-items:center;gap:10px;flex:1}.brand b{font-weight:800;letter-spacing:.22em;font-size:14px}.brand small{display:block;font-size:10.5px;color:var(--mut);letter-spacing:.06em;font-weight:600;margin-top:-1px}
+.pill{font-size:11px;color:var(--mut);display:inline-flex;align-items:center;gap:6px;max-width:40vw;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.pill:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--mut);flex:none}.pill.ok:before{background:var(--pos)}.pill.warn:before{background:var(--amb)}
+.ib{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;width:38px;height:38px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}.ib svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.pg{margin:8px 2px 16px}.ey{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}.pg h2{font-size:26px;letter-spacing:-.025em;margin:4px 0 0;font-weight:700}
+.card{background:var(--card);border-radius:20px;padding:18px;margin:0 0 12px;box-shadow:var(--sh);border:1px solid var(--line)}
+.card h3,details.acc h3{margin:0 0 4px;font-size:15px;font-weight:700;letter-spacing:-.01em}.card .sub{font-size:13px;color:var(--mut);margin:0 0 12px}
+.mut{color:var(--mut)}.sm{font-size:12.5px}.pos{color:var(--pos)}.neg{color:var(--neg)}.wrn{color:var(--amb)}
+.hero{background:var(--hero);color:#fff;border-color:transparent}.hero .mut,.hero .sm{color:rgba(255,255,255,.62)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}.tile{background:var(--card);border-radius:16px;padding:13px;border:1px solid var(--line)}.tile .l{font-size:12px;color:var(--mut)}.tile .v{font-size:19px;font-weight:700;margin-top:2px}
 .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.sp{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.btn{border:none;background:var(--bar);color:var(--ink);border-radius:18px;padding:12px 18px;font:inherit;font-weight:700;cursor:pointer;transition:transform .1s}
-.btn:active,.chip:active,nav button:active,.task:active,.it:active,.tl:active,.dcard:active{transform:scale(.97)}
-.btn.pri{background:var(--ink);color:var(--bg)}.btn.go{background:var(--acc);color:#fff}.btn.bad{color:var(--bad)}.btn.wide{width:100%;margin-top:12px;padding:16px}.btn.sm{padding:8px 14px;font-size:14px;border-radius:99px}.btn.ghost{background:none;color:var(--mut)}.btn.big{padding:18px;font-size:17px;border-radius:22px;flex:1}.btn.lime{background:var(--lime);color:#1B2440}
-.bar{height:10px;border-radius:9px;background:var(--bar);overflow:hidden}.bar i{display:block;height:100%;background:var(--acc);border-radius:9px}.bar.over i{background:var(--bad)}.bar.near i{background:var(--warn)}.bw{position:relative}.tick{position:absolute;top:-3px;width:2px;height:16px;background:var(--ink)}
-.item{padding:12px 0;border-top:1px solid var(--line)}.item:first-of-type{border-top:none;padding-top:4px}
-.it{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line);cursor:pointer}.it:first-of-type{border-top:none}.it .ic{flex:none;width:40px;height:40px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}.it .tx{flex:1;min-width:0}.it .tx div:first-child{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.it .am{font-weight:800;white-space:nowrap}
-.si{flex:none;width:42px;height:42px;border-radius:15px;display:flex;align-items:center;justify-content:center}.si svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
-.seg2{display:flex;background:var(--bar);border-radius:16px;padding:4px;margin-bottom:12px}.seg2 button{flex:1;border:none;background:none;color:var(--mut);font:inherit;font-size:14px;padding:9px 2px;border-radius:12px;cursor:pointer}.seg2 button.on{background:var(--card);color:var(--ink);font-weight:800;box-shadow:var(--sh)}
-.chip{border:none;background:var(--bar);color:var(--ink);border-radius:99px;padding:8px 14px;font:inherit;font-size:14px;font-weight:650;cursor:pointer}.chip.on{background:var(--ink);color:var(--bg)}.chip.ok{background:var(--acc2);color:var(--good)}
-.ins{padding:12px 14px;border-radius:18px;background:var(--acc2);margin:8px 0 0;font-size:14.5px}
-.mv{padding:13px 14px;border-radius:18px;background:var(--acc2);margin:8px 0 0;border-left:4px solid var(--good)}.mv.bad{border-left-color:var(--bad)}.mv.warn{border-left-color:var(--warn)}.mv .t{font-weight:800}
-.mv2{display:flex;gap:12px;padding:14px 0;border-top:1px solid var(--line)}.mv2:first-of-type{border-top:none;padding-top:4px}.mv2 .n{flex:none;width:34px;height:34px;border-radius:12px;background:var(--acc2);color:var(--good);font-weight:800;display:flex;align-items:center;justify-content:center}.mv2.bad .n{background:color-mix(in srgb,var(--bad) 14%,transparent);color:var(--bad)}.mv2.warn .n{background:color-mix(in srgb,var(--warn) 16%,transparent);color:var(--warn)}.mv2 .tg{font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--good)}.mv2.bad .tg{color:var(--bad)}.mv2.warn .tg{color:var(--warn)}.mv2 .t{font-weight:800;font-size:16px}
-.banner{display:flex;gap:10px;align-items:center;justify-content:space-between;background:var(--card);border-radius:22px;padding:12px 14px;margin-bottom:12px;font-size:14px;box-shadow:var(--sh)}
-nav{position:fixed;left:0;right:0;bottom:calc(12px + env(safe-area-inset-bottom));z-index:6;display:flex;justify-content:center;padding:0 16px;pointer-events:none}
-nav .in{pointer-events:auto;display:flex;align-items:center;gap:2px;background:var(--card);border-radius:99px;padding:6px;box-shadow:0 10px 30px rgba(27,36,64,.16);width:100%;max-width:420px;border:1px solid var(--line)}
-nav button{flex:1;background:none;border:none;color:var(--mut);font:inherit;font-size:11px;font-weight:700;display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 0;border-radius:99px;cursor:pointer}nav button.on{color:var(--ink);background:var(--bar)}nav svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-nav button.plus{flex:none;width:54px;height:54px;background:var(--acc);color:#fff;margin:0 4px}nav button.plus svg{width:26px;height:26px;stroke-width:2.8}
-.ov{position:fixed;inset:0;background:rgba(16,19,28,.45);z-index:20;display:flex;align-items:flex-end;justify-content:center;animation:fade .18s}
-.sh{background:var(--bg);width:100%;max-width:520px;max-height:92vh;overflow:auto;border-radius:30px 30px 0 0;padding:16px 18px calc(24px + env(safe-area-inset-bottom));animation:up .25s cubic-bezier(.2,.8,.2,1)}.sh:before{content:"";display:block;width:42px;height:5px;border-radius:5px;background:var(--bar);margin:0 auto 14px}
-.shh{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:20px}.x{background:var(--bar);border:none;color:var(--mut);font-size:14px;cursor:pointer;width:32px;height:32px;border-radius:50%}
+.btn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:11px 16px;font:inherit;font-weight:600;cursor:pointer;transition:transform .1s,opacity .15s}
+.btn:active,.chip:active,nav button:active,.task:active,.it:active,.tl:active{transform:scale(.98);opacity:.9}
+.btn.pri,.btn.go{background:var(--ink);color:var(--bg);border-color:var(--ink)}.btn.lime{background:var(--lime);color:#0F1513;border-color:var(--lime)}.btn.bad{color:var(--neg)}.btn.wide{width:100%;margin-top:12px;padding:14px}.btn.sm{padding:7px 12px;font-size:13px;border-radius:10px}.btn.ghost{background:none;border-color:transparent;color:var(--mut)}.btn.big{padding:15px;font-size:15.5px;border-radius:14px;flex:1}
+.hero .btn{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12);color:#fff}.hero .btn.lime{background:var(--lime);color:#0F1513;border-color:var(--lime)}
+.bar{height:8px;border-radius:6px;background:var(--bar);overflow:hidden}.bar i{display:block;height:100%;background:var(--ink);border-radius:6px}.bar.over i{background:var(--neg)}.bar.near i{background:var(--amb)}.bw{position:relative}.tick{position:absolute;top:-3px;width:2px;height:14px;background:var(--ink)}
+.item{padding:12px 0;border-top:1px solid var(--line)}.item:first-of-type{border-top:none;padding-top:2px}
+.it{display:flex;align-items:center;gap:12px;padding:11px 0;border-top:1px solid var(--line);cursor:pointer}.it:first-of-type{border-top:none}.it .ic{flex:none;width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:14px}.it .tx{flex:1;min-width:0}.it .tx div:first-child{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.it .am{font-weight:700;white-space:nowrap}
+.si{flex:none;width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center}.si svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.seg2{display:flex;background:var(--bar);border-radius:12px;padding:3px;margin-bottom:14px}.seg2 button{flex:1;border:none;background:none;color:var(--mut);font:inherit;font-size:13.5px;font-weight:600;padding:8px 2px;border-radius:9px;cursor:pointer}.seg2 button.on{background:var(--card);color:var(--ink);box-shadow:var(--sh)}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:7px 12px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}.chip.ok{background:var(--acc2);color:var(--limeT);border-color:transparent}
+.ins{padding:11px 13px;border-radius:12px;background:var(--bar);margin:8px 0 0;font-size:14px}
+.mv{padding:12px 14px;border-radius:12px;background:var(--bar);margin:8px 0 0;border-left:3px solid var(--pos)}.mv.bad{border-left-color:var(--neg)}.mv.warn{border-left-color:var(--amb)}.mv .t{font-weight:700}
+.mv2{display:flex;gap:12px;padding:13px 0;border-top:1px solid var(--line)}.mv2:first-of-type{border-top:none;padding-top:2px}.mv2 .n{flex:none;width:30px;height:30px;border-radius:9px;background:var(--bar);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13px}.mv2.bad .n{background:var(--neg);color:#fff}.mv2.warn .n{background:var(--amb);color:#fff}.mv2.good .n{background:var(--lime);color:#0F1513}.mv2 .tg{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}.mv2 .t{font-weight:700;font-size:15px}
+.banner{display:flex;gap:10px;align-items:center;justify-content:space-between;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 14px;margin-bottom:12px;font-size:14px}
+nav{position:fixed;left:0;right:0;bottom:0;z-index:6;background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--line);padding:6px 10px calc(6px + env(safe-area-inset-bottom));display:flex;justify-content:center}
+nav .in{display:flex;align-items:center;width:100%;max-width:500px}
+nav button{flex:1;background:none;border:none;color:var(--mut);font:inherit;font-size:10.5px;font-weight:600;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 0;cursor:pointer}nav button.on{color:var(--ink)}nav button.on svg{stroke-width:2.3}nav svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+nav button.plus{flex:none;width:50px;height:50px;border-radius:15px;background:var(--ink);color:var(--lime);margin:0 6px}nav button.plus svg{width:24px;height:24px;stroke-width:2.6}
+.ov{position:fixed;inset:0;background:rgba(10,12,11,.45);z-index:20;display:flex;align-items:flex-end;justify-content:center;animation:fade .18s}
+.sh{background:var(--bg);width:100%;max-width:520px;max-height:92vh;overflow:auto;border-radius:22px 22px 0 0;padding:14px 18px calc(24px + env(safe-area-inset-bottom));animation:up .25s cubic-bezier(.2,.8,.2,1)}.sh:before{content:"";display:block;width:36px;height:4px;border-radius:4px;background:var(--line);margin:0 auto 14px}
+.shh{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:18px}.x{background:var(--bar);border:none;color:var(--mut);font-size:13px;cursor:pointer;width:30px;height:30px;border-radius:50%}
 @keyframes up{from{transform:translateY(30px);opacity:.5}to{transform:none;opacity:1}}@keyframes fade{from{opacity:0}to{opacity:1}}
-label.f{display:block;margin:12px 0 0;font-size:13px;color:var(--mut);font-weight:700}
-input,select,textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:13px;margin-top:5px}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--acc)}input.amt{font-size:34px;font-weight:800;text-align:center;padding:14px}
-input[type=range]{padding:0;border:none;background:none;accent-color:var(--acc)}input[type=checkbox],input[type=radio]{width:20px;height:20px;margin:0 6px 0 0;accent-color:var(--acc)}textarea{resize:vertical}
-.seg{display:flex;gap:6px;flex-wrap:wrap}.seg label{flex:1;min-width:70px;text-align:center;border-radius:14px;padding:11px 4px;cursor:pointer;background:var(--bar);font-size:14px;font-weight:700;color:var(--mut)}.seg input{display:none}.seg label:has(input:checked){background:var(--ink);color:var(--bg)}
-.err{color:var(--bad);font-size:14px;margin-top:8px;min-height:1em}
-.msgs{display:flex;flex-direction:column;gap:8px}.empty{text-align:center;color:var(--mut);padding:18px 8px}
-h2.t{font-size:17px;font-weight:800;margin:24px 2px 10px}
-.tag{font-size:11px;font-weight:800;border-radius:7px;padding:2px 7px;background:var(--bar);color:var(--mut);margin-left:6px;vertical-align:1px}
-.big2{font-size:30px;font-weight:800;letter-spacing:-.02em}
-.lg{display:flex;flex-direction:column;gap:6px;font-size:14px;flex:1;min-width:0}.lg span{display:flex;justify-content:space-between;gap:8px}.dot{display:inline-block;width:10px;height:10px;border-radius:4px;margin-right:6px}
-.flow{display:flex;height:18px;border-radius:10px;overflow:hidden;background:var(--bar);gap:2px}.flow i{display:block;height:100%}
-.rv{border-radius:22px;padding:18px;text-align:center}.rv.good{background:var(--acc2);color:var(--good)}.rv.bad{background:color-mix(in srgb,var(--bad) 12%,transparent);color:var(--bad)}
-details.acc{background:var(--card);border-radius:24px;margin-bottom:12px;box-shadow:var(--sh)}details.acc summary{list-style:none;cursor:pointer;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:800}details.acc summary::-webkit-details-marker{display:none}details.acc summary span:first-child{flex:1}details.acc summary:after{content:"›";color:var(--mut);font-size:18px}details.acc[open] summary:after{transform:rotate(90deg)}.accb{padding:0 18px 18px}
-details.dz summary{list-style:none;cursor:pointer;padding:13px 16px;border-radius:16px;border:1.5px dashed var(--line);color:var(--mut);font-size:14px;text-align:center;margin-bottom:12px}details.dz summary::-webkit-details-marker{display:none}
-#toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(92px + env(safe-area-inset-bottom));background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:99px;font-size:14px;font-weight:700;z-index:30;opacity:0;transition:opacity .25s;pointer-events:none;white-space:nowrap}#toast.on{opacity:1;pointer-events:auto}#toast button{background:none;border:none;color:var(--lime);font:inherit;font-weight:800;margin-left:10px;cursor:pointer}
-.mn{display:flex;align-items:center;justify-content:space-between;margin:2px 0 12px}
-.qc{display:flex;gap:6px;overflow-x:auto;padding:2px 0 4px;margin-top:8px;scrollbar-width:none}.qc::-webkit-scrollbar{display:none}.qc .chip{flex:none}
-.dg{display:flex;align-items:flex-end;gap:3px;height:90px}.dg i{flex:1;border-radius:4px 4px 2px 2px;background:var(--acc);min-height:2px}.dg i.z{background:var(--bar)}.dg i.td{background:var(--ink)}
-.al{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line)}.al:first-of-type{border-top:none;padding-top:2px}.al .tx{flex:1;min-width:0}
-.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tl{background:var(--card);border-radius:22px;padding:14px;cursor:pointer;box-shadow:var(--sh);display:flex;flex-direction:column;gap:8px;border:none;font:inherit;color:var(--ink);text-align:left}.tl b{font-size:15px}.tl span{font-size:12.5px;color:var(--mut);line-height:1.3}
-.wf{display:flex;flex-direction:column;gap:9px}.wf .r{display:grid;grid-template-columns:1fr 92px;gap:10px;align-items:center;font-size:14px}.wf .bb{grid-column:1/-1;height:8px;border-radius:6px;background:rgba(255,255,255,.1);overflow:hidden;margin-top:-4px}.wf .bb i{display:block;height:100%;border-radius:6px}.wf .r b{text-align:right}.wf .tot{border-top:1px solid rgba(255,255,255,.15);padding-top:9px;font-weight:800}
-.chat{display:flex;flex-direction:column;gap:10px;padding-bottom:160px}.bub{max-width:88%;padding:13px 16px;border-radius:24px;font-size:15.5px;line-height:1.45;animation:pop .3s both}.bub.r{align-self:flex-start;background:var(--card);box-shadow:var(--sh);border-bottom-left-radius:8px}.bub.u{align-self:flex-end;background:var(--ink);color:var(--bg);border-bottom-right-radius:8px}
-.bub .k{font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px}.bub.bad .k{color:var(--bad)}.bub.warn .k{color:var(--warn)}.bub.good .k{color:var(--good)}.bub .row{margin-top:10px}.who{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--mut);margin:4px 0 -2px 2px}
-@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-.composer{position:fixed;left:0;right:0;bottom:calc(86px + env(safe-area-inset-bottom));z-index:5;display:flex;justify-content:center;padding:0 16px;pointer-events:none}.composer .in{pointer-events:auto;width:100%;max-width:488px;background:var(--card);border-radius:26px;box-shadow:0 10px 30px rgba(27,36,64,.12);padding:8px;border:1px solid var(--line)}
-.composer textarea{border:none;margin:0;padding:8px 10px;resize:none;background:none;min-height:40px}.composer .qc{margin:0 0 6px;padding:0 4px}
-.clip,.send{width:42px;height:42px;border-radius:50%;border:none;cursor:pointer;flex:none;display:flex;align-items:center;justify-content:center}.clip{background:var(--bar);color:var(--ink)}.clip svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.send{background:var(--acc);color:#fff;font-size:18px;font-weight:800}
-.steps{display:flex;flex-direction:column;gap:10px;margin:14px 0}.steps div{display:flex;gap:10px;align-items:center;font-size:15px;color:var(--mut)}.steps div.on{color:var(--ink);font-weight:700}.steps div.ok{color:var(--good)}.steps i{width:24px;height:24px;border-radius:50%;background:var(--bar);flex:none;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:12px}.steps div.on i{background:var(--ink);color:var(--bg)}.steps div.ok i{background:var(--acc);color:#fff}
-.drop{border:2px dashed var(--line);border-radius:24px;padding:24px 16px;text-align:center;cursor:pointer;display:block;margin-top:12px;background:var(--card)}.drop input{display:none}.drop .si{margin:0 auto}
-/* --- coach home --- */
-.coach{display:flex;gap:12px;align-items:flex-end;margin:4px 0 10px}.coach .say{flex:1;background:var(--card);border-radius:24px 24px 24px 8px;padding:14px 16px;box-shadow:var(--sh);font-size:15.5px;position:relative}
-.mascot{flex:none;width:78px;height:78px;animation:bob 4s ease-in-out infinite}@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
-.today{background:var(--card);border-radius:32px;padding:22px 20px 20px;box-shadow:var(--sh);text-align:center;margin-bottom:14px;position:relative;overflow:hidden}
-.today .lab{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}.today .num{font-size:clamp(60px,19vw,84px);font-weight:900;letter-spacing:-.05em;line-height:1.02;margin:6px 0 0}.today .cur{font-size:15px;font-weight:700;color:var(--mut)}
-.today.warn .num{color:var(--warn)}.today.bad .num{color:var(--bad)}
-.jar{height:16px;border-radius:12px;background:var(--bar);overflow:hidden;margin:16px 0 6px;position:relative}.jar i{position:absolute;left:0;top:0;bottom:0;border-radius:12px;background:linear-gradient(90deg,var(--acc),#6FE0B7)}.today.warn .jar i{background:linear-gradient(90deg,#E0961B,#FFC85C)}.today.bad .jar i{background:var(--bad)}
-.wk7{display:flex;justify-content:center;gap:9px;margin-top:14px}.wk7 span{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;color:var(--mut);font-weight:700}.wk7 i{width:26px;height:26px;border-radius:50%;background:var(--bar);display:flex;align-items:center;justify-content:center;font-style:normal;font-size:12px;color:#fff}.wk7 i.ok{background:var(--acc)}.wk7 i.no{background:var(--coral)}.wk7 i.td{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--ink)}
-.task{display:flex;align-items:center;gap:14px;background:var(--card);border-radius:24px;padding:14px 16px;margin-bottom:10px;box-shadow:var(--sh);cursor:pointer}.task .ck{flex:none;width:30px;height:30px;border-radius:50%;border:2.5px solid var(--line);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:14px}.task.done .ck{background:var(--acc);border-color:var(--acc)}.task.done .tt{color:var(--mut);text-decoration:line-through}
-.task .tt{font-weight:800;font-size:15.5px}.task .ts{font-size:13px;color:var(--mut)}.task .gg{margin-left:auto;color:var(--mut);font-size:20px}.task.hot{background:linear-gradient(135deg,#FFF3DA,#FFE3B0)}.task.hot .ck{border-color:#E0961B}
-@media(prefers-color-scheme:dark){.task.hot{background:#3A2F17}}
-.mtn{position:relative;border-radius:28px;overflow:hidden;background:linear-gradient(180deg,#DDEBFF,#F6F1FF);padding:18px 18px 0;margin-bottom:14px;color:#1B2440}
-@media(prefers-color-scheme:dark){.mtn{background:linear-gradient(180deg,#1E2A48,#251F3E);color:#EEF0F6}}
-.mtn svg{display:block;width:100%;height:auto;margin-top:6px}
-.dcard{background:var(--card);border-radius:26px;padding:16px;margin-bottom:12px;box-shadow:var(--sh)}
-.acct{display:grid;grid-template-columns:1fr 120px;gap:10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}.acct:first-of-type{border-top:none}.acct input{margin:0;padding:10px;text-align:right;font-weight:800}
-.shots{display:flex;gap:8px;overflow-x:auto;margin-top:10px}.shots img{height:110px;border-radius:14px;box-shadow:var(--sh)}
-.bento{display:grid;grid-template-columns:1fr 1fr;gap:12px}.bt{background:var(--card);border-radius:26px;padding:16px;box-shadow:var(--sh);cursor:pointer;min-height:120px;display:flex;flex-direction:column}.bt.w{grid-column:span 2}.bt .k{font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}.bt .v{font-size:24px;font-weight:800;margin-top:6px}.bt .s{font-size:13px;color:var(--mut)}.bt.dark{background:var(--hero);color:#fff}.bt.dark .k,.bt.dark .s{color:rgba(255,255,255,.65)}.bt.lime{background:var(--lime);color:#1B2440}
+label.f{display:block;margin:12px 0 0;font-size:12.5px;color:var(--mut);font-weight:600}
+input,select,textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;margin-top:5px}input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ink)}
+input.amt{font-size:32px;font-weight:700;text-align:center;padding:14px;letter-spacing:-.02em}input[type=range]{padding:0;border:none;background:none;accent-color:var(--ink)}input[type=checkbox],input[type=radio]{width:18px;height:18px;margin:0 8px 0 0;accent-color:var(--ink)}textarea{resize:vertical}
+.seg{display:flex;gap:6px;flex-wrap:wrap}.seg label{flex:1;min-width:70px;text-align:center;border-radius:10px;padding:10px 4px;cursor:pointer;background:var(--card);border:1px solid var(--line);font-size:13.5px;font-weight:600;color:var(--mut)}.seg input{display:none}.seg label:has(input:checked){background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.err{color:var(--neg);font-size:13.5px;margin-top:8px;min-height:1em}.empty{text-align:center;color:var(--mut);padding:18px 8px}
+h2.t{font-size:15px;font-weight:700;margin:22px 2px 10px}.tag{font-size:10.5px;font-weight:700;border-radius:6px;padding:2px 6px;background:var(--bar);color:var(--mut);margin-left:6px;vertical-align:1px}
+.big2{font-size:28px;font-weight:700;letter-spacing:-.025em}
+.lg{display:flex;flex-direction:column;gap:6px;font-size:13.5px;flex:1;min-width:0}.lg span{display:flex;justify-content:space-between;gap:8px}.dot{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:7px}
+.flow{display:flex;height:14px;border-radius:7px;overflow:hidden;background:var(--bar);gap:2px}.flow i{display:block;height:100%}
+.rv{border-radius:16px;padding:16px;text-align:center}.rv.good{background:var(--acc2);color:var(--limeT)}.rv.bad{background:color-mix(in srgb,var(--neg) 10%,transparent);color:var(--neg)}
+details.acc{background:var(--card);border:1px solid var(--line);border-radius:18px;margin-bottom:12px}details.acc summary{list-style:none;cursor:pointer;padding:15px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:700}details.acc summary::-webkit-details-marker{display:none}details.acc summary span:first-child{flex:1}details.acc summary:after{content:"›";color:var(--mut)}details.acc[open] summary:after{transform:rotate(90deg)}.accb{padding:0 16px 16px}
+details.dz summary{list-style:none;cursor:pointer;padding:12px 16px;border-radius:12px;border:1px dashed var(--line);color:var(--mut);font-size:13.5px;text-align:center;margin-bottom:12px}details.dz summary::-webkit-details-marker{display:none}
+#toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(84px + env(safe-area-inset-bottom));background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:12px;font-size:13.5px;font-weight:600;z-index:30;opacity:0;transition:opacity .25s;pointer-events:none;white-space:nowrap}#toast.on{opacity:1;pointer-events:auto}#toast button{background:none;border:none;color:var(--lime);font:inherit;font-weight:800;margin-left:10px;cursor:pointer}
+.mn{display:flex;align-items:center;justify-content:space-between;margin:2px 0 12px}.qc{display:flex;gap:6px;overflow-x:auto;padding:2px 0 4px;margin-top:8px;scrollbar-width:none}.qc::-webkit-scrollbar{display:none}.qc .chip{flex:none}
+.dg{display:flex;align-items:flex-end;gap:3px;height:80px}.dg i{flex:1;border-radius:3px 3px 1px 1px;background:var(--ink);min-height:2px;opacity:.85}.dg i.z{background:var(--bar)}.dg i.td{background:var(--c2)}
+.al{display:flex;align-items:center;gap:12px;padding:11px 0;border-top:1px solid var(--line)}.al:first-of-type{border-top:none;padding-top:2px}.al .tx{flex:1;min-width:0}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tl{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;cursor:pointer;display:flex;flex-direction:column;gap:8px;font:inherit;color:var(--ink);text-align:left}.tl b{font-size:14.5px}.tl span{font-size:12px;color:var(--mut);line-height:1.3}
+.wf{display:flex;flex-direction:column;gap:9px}.wf .r{display:grid;grid-template-columns:1fr 92px;gap:10px;align-items:center;font-size:13.5px}.wf .bb{grid-column:1/-1;height:6px;border-radius:4px;background:rgba(255,255,255,.1);overflow:hidden;margin-top:-4px}.wf .bb i{display:block;height:100%;border-radius:4px}.wf .r b{text-align:right}.wf .tot{border-top:1px solid rgba(255,255,255,.15);padding-top:9px;font-weight:700}
+.chat{display:flex;flex-direction:column;gap:10px;padding-bottom:170px}.bub{max-width:90%;padding:12px 15px;border-radius:16px;font-size:14.5px;line-height:1.5;animation:pop .25s both}.bub.r{align-self:flex-start;background:var(--card);border:1px solid var(--line);border-top-left-radius:4px}.bub.u{align-self:flex-end;background:var(--ink);color:var(--bg);border-top-right-radius:4px}
+.bub .k{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;color:var(--mut)}.bub.bad .k{color:var(--neg)}.bub.warn .k{color:var(--amb)}.bub.good .k{color:var(--limeT)}.bub .row{margin-top:10px}.who{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--mut);margin:4px 0 -2px 2px}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.composer{position:fixed;left:0;right:0;bottom:calc(68px + env(safe-area-inset-bottom));z-index:5;display:flex;justify-content:center;padding:0 14px 8px;pointer-events:none}.composer .in{pointer-events:auto;width:100%;max-width:492px;background:var(--card);border-radius:18px;box-shadow:0 8px 24px rgba(15,21,19,.1);padding:8px;border:1px solid var(--line)}
+.composer textarea{border:none;margin:0;padding:8px 10px;resize:none;background:none;min-height:40px}.composer .qc{margin:0 0 6px;padding:0 2px}
+.clip,.send{width:40px;height:40px;border-radius:12px;border:none;cursor:pointer;flex:none;display:flex;align-items:center;justify-content:center}.clip{background:var(--bar);color:var(--ink)}.clip svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.send{background:var(--ink);color:var(--lime);font-size:17px;font-weight:800}
+.steps{display:flex;flex-direction:column;gap:10px;margin:14px 0}.steps div{display:flex;gap:10px;align-items:center;font-size:14px;color:var(--mut)}.steps div.on{color:var(--ink);font-weight:600}.steps div.ok{color:var(--pos)}.steps i{width:22px;height:22px;border-radius:50%;background:var(--bar);flex:none;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:11px}.steps div.on i{background:var(--ink);color:var(--lime)}.steps div.ok i{background:var(--pos);color:#fff}
+.drop{border:1.5px dashed var(--line);border-radius:16px;padding:22px 16px;text-align:center;cursor:pointer;display:block;margin-top:12px;background:var(--card)}.drop input{display:none}.drop .si{margin:0 auto}
+.acct{display:grid;grid-template-columns:1fr 120px;gap:10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}.acct:first-of-type{border-top:none}.acct input{margin:0;padding:10px;text-align:right;font-weight:700}
+.shots{display:flex;gap:8px;overflow-x:auto;margin-top:10px}.shots img{height:110px;border-radius:10px;border:1px solid var(--line)}
+/* --- brand components --- */
+.coach{display:flex;gap:12px;align-items:flex-start;margin:0 0 12px}.coach .say{flex:1;background:var(--card);border:1px solid var(--line);border-radius:4px 16px 16px 16px;padding:12px 14px;font-size:14.5px}
+.mascot{flex:none;width:36px;height:36px}
+.brief{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--lime);border-radius:16px;padding:14px 15px;margin-bottom:12px}.brief.warn{border-left-color:var(--amb)}.brief.bad{border-left-color:var(--neg)}.brief .tx{flex:1;font-size:14.5px}.brief .row{margin-top:10px}
+.hring{display:flex;flex-direction:column;align-items:center;padding:6px 0 2px}.hring svg{width:min(62vw,230px);height:auto;display:block}
+.kv{display:grid;grid-template-columns:repeat(3,1fr);margin-top:16px;border-top:1px solid rgba(255,255,255,.1);padding-top:14px}.kv>div{text-align:center;border-left:1px solid rgba(255,255,255,.1);cursor:pointer}.kv>div:first-child{border-left:none}.kv span{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.55)}.kv b{display:block;font-size:17px;font-weight:700;margin-top:3px}
+.task{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:8px;cursor:pointer}.task .ck{flex:none;width:24px;height:24px;border-radius:7px;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;color:#0F1513;font-weight:900;font-size:12px}.task.done .ck{background:var(--lime);border-color:var(--lime)}.task.done .tt{color:var(--mut)}
+.task .tt{font-weight:650;font-size:14.5px}.task .ts{font-size:12.5px;color:var(--mut)}.task .gg{margin-left:auto;color:var(--mut)}.task.hot{border-color:var(--amb)}.task.hot .ck{border-color:var(--amb)}
+.dcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:10px}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--mut);margin-top:8px}.legend span{display:inline-flex;align-items:center}
+.chartH{font-size:22px;font-weight:700;letter-spacing:-.02em;margin:2px 0 2px}.chartH small{font-size:13px;font-weight:600;color:var(--mut)}
+.bento{display:grid;grid-template-columns:1fr 1fr;gap:10px}.bt{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;cursor:pointer;min-height:110px;display:flex;flex-direction:column}.bt.w{grid-column:span 2}.bt .k{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}.bt .v{font-size:22px;font-weight:700;margin-top:6px}.bt .s{font-size:12.5px;color:var(--mut)}.bt.dark{background:var(--hero);color:#fff}.bt.lime{background:var(--lime);color:#0F1513}
+@media(prefers-color-scheme:dark){nav button.plus{background:var(--lime);color:#0F1513}.btn.pri,.btn.go{background:var(--lime);color:#0F1513;border-color:var(--lime)}.hero{background:#1A201D;border:1px solid var(--line)}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header><div class="brand"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect width="32" height="32" rx="10" fill="#0F1513"/><path d="M16 7.5a8.5 8.5 0 1 1-8.5 8.5" fill="none" stroke="#C6F36B" stroke-width="3.2" stroke-linecap="round"/><circle cx="16" cy="16" r="2.8" fill="#C6F36B"/></svg>RAFIQ</div><span class="pill" id="st">Loading…</span><button class="ib" onclick="A.data()" aria-label="Settings and backup"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button></header>
+  <header><div class="brand"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect width="32" height="32" rx="10" fill="#0F1513"/><path d="M16 7.5a8.5 8.5 0 1 1-8.5 8.5" fill="none" stroke="#C6F36B" stroke-width="3.2" stroke-linecap="round"/><circle cx="16" cy="16" r="2.8" fill="#C6F36B"/></svg><div><b>RAFIQ</b><small>Money coach</small></div></div><span class="pill" id="st">Loading…</span><button class="ib" onclick="A.data()" aria-label="Settings and backup"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button></header>
   <main id="app"></main>
 </div>
 <nav><div class="in" id="nav"></div></nav>
@@ -183,7 +178,8 @@ function occ(days){
   const out=[], t0=midnight(), td=dstr(t0), e=new Date(t0); e.setDate(e.getDate()+days); const end=dstr(e);
   for(const r of S.rules){ if(!r.active)continue;
     for(const d of dueList(r,td,end)){ if(r.done.includes(d.per)||d.ds<=(r.from||''))continue;
-      const dt=new Date(d.ds+'T00:00:00'); out.push({r,dt,diff:Math.round((dt-t0)/864e5),ds:d.ds,per:d.per}); } }
+      const dt=new Date(d.ds+'T00:00:00'); out.push({r,dt,diff:Math.round((dt-t0)/864e5),ds:d.ds,per:d.per}); }
+    if(r.flex&&r.type==='income'){ const cur=mk(t0); if(ruleActiveIn(r,cur)&&!r.done.includes(cur)&&t0.getDate()>r.day&&t0.getDate()<=20){ const dt=new Date(t0); dt.setDate(dt.getDate()+3); out.push({r,dt,diff:3,ds:dstr(dt),per:cur,late:true}); } } }
   return out.sort((a,b)=>a.diff-b.diff);
 }
 function safeToSpend(){
@@ -201,6 +197,16 @@ function pace(k){
 }
 function daysSinceLog(){ const ts=S.txns.filter(t=>!t.auto).map(t=>t.created||0); if(!ts.length)return null; return Math.floor((Date.now()-Math.max(...ts))/864e5); }
 
+/* ---------- flexible payday ---------- */
+function salaryDue(){
+  const r=S.rules.find(x=>x.type==='income'&&x.flex&&x.active); if(!r)return null;
+  const t0=midnight(), d=t0.getDate(), cur=mk(t0), p=d<=15?cur:shiftM(cur,1);
+  if(r.done.includes(p)||!ruleActiveIn(r,p))return null;
+  if(meta&&meta.salSnooze===todayStr())return null;
+  if(p===cur&&d>=(r.early||1))return {r,p,late:d>r.day};
+  if(p!==cur&&d>=daysIn(cur)-4)return {r,p,early:true};
+  return null;
+}
 /* ---------- spread costs: monthly or yearly, no fixed date ---------- */
 const spPer=x=>x.per==='year'?'year':'month';
 const freeTx=t=>t.type==='expense'&&!t.sid&&!t.auto&&!t.recon&&!t.imp;
@@ -279,7 +285,7 @@ function sim(extra,bump){
   const live=()=>ds.filter(d=>d.b>0.005).sort((a,b)=>meth==='avalanche'?((b.rate-a.rate)||(a.b-b.b)):((a.b-b.b)||(b.rate-a.rate)));
   if(bump>0)live()[0].b+=bump; else if(bump<0){ let rem=-bump; for(const t of live()){ const x=Math.min(t.b,rem); t.b-=x; rem-=x; if(rem<=0.005)break; } }
   if(!live().length)return {months:0,end:mk(new Date()),interest:0,series:[0],order:[],target:null,clear:true};
-  const target=live()[0], series=[ds.reduce((s,d)=>s+d.b,0)], order=[]; let interest=0,m=cur,i=0;
+  const target=live()[0], series=[ds.reduce((s,d)=>s+d.b,0)], order=[], PS={}; for(const d of ds)PS[d.id]=[d.b]; let interest=0,m=cur,i=0;
   while(ds.some(d=>d.b>0.005)&&i<480){
     let pool=i>0?extra:0;
     for(const d of S.debts){ const x=ds.find(y=>y.id===d.id);
@@ -288,10 +294,10 @@ function sim(extra,bump){
       const it=x.b*x.r; x.b+=it; interest+=it; const pay=Math.min(sc,x.b); x.b-=pay; pool+=sc-pay; }
     for(const t of live()){ if(pool<=0)break; const pay=Math.min(pool,t.b); t.b-=pay; pool-=pay; }
     for(const d of ds)if(d.b<=0.005&&!d.fin){d.fin=m;order.push({name:d.name,m});}
-    i++; series.push(ds.reduce((s,d)=>s+Math.max(0,d.b),0)); m=shiftM(m,1);
+    i++; series.push(ds.reduce((s,d)=>s+Math.max(0,d.b),0)); for(const d of ds)PS[d.id].push(Math.max(0,d.b)); m=shiftM(m,1);
   }
   const clear=!ds.some(d=>d.b>0.005);
-  return {months:clear?i:Infinity,end:clear?order[order.length-1].m:null,interest,series,order,target:target.name,targetId:target.id,clear};
+  return {months:clear?i:Infinity,end:clear?order[order.length-1].m:null,interest,series,order,target:target.name,targetId:target.id,clear,PS,names:Object.fromEntries(ds.map(d=>[d.id,d.name]))};
 }
 function dailyBurn(){ const v=[], t0=midnight(); for(let i=1;i<=21;i++){ const d=new Date(t0); d.setDate(d.getDate()-i); const c=S.checkins[dstr(d)]; if(c&&c.done)v.push(c.spent); } if(v.length>=3)return v.reduce((a,b)=>a+b,0)/v.length;
   const im=S.txns.filter(t=>t.imp&&t.type==='expense'&&!t.sid&&!t.billish); if(im.length<5)return null; const ds=im.map(t=>t.date).sort(), days=Math.max(14,Math.round((new Date(ds[ds.length-1])-new Date(ds[0]))/864e5)+1); return im.reduce((a,t)=>a+t.amount,0)/days; }
@@ -362,7 +368,7 @@ function goalContrib(g){
 function runRules(){
   const td=todayStr(); let n=0;
   for(const r of S.rules){
-    if(!r.active)continue;
+    if(!r.active||(r.flex&&r.type==='income'))continue;
     for(const d of dueList(r,(/^\d{4}-\d{2}$/.test(r.start||'')?r.start:'2000-01')+'-01',td)){
       if(r.done.includes(d.per))continue; r.done.push(d.per); if(d.ds<=(r.from||''))continue;
       const t={id:uid(),type:r.type,amount:r.amount,date:d.ds,category:r.category||r.name,note:r.name,auto:true,ruleId:r.id,period:d.per,created:Date.now()};
@@ -526,6 +532,7 @@ function addTxn(x){
   else if(x.type==='saving'){ const g=S.goals.find(g=>g.id===x.goalId); if(!g)throw new Error('Choose a goal.'); t.goalId=g.id; t.category='Savings'; }
   else if(!t.category)t.category=x.type==='income'?'Other income':'Other';
   let sx=null; if(t.type==='expense'){ sx=matchSpread(t.category); if(sx){t.sid=sx.id;t.category=sx.name;} }
+  if(t.type==='income'){ const fr=salaryDue(); if(fr&&(/salary|pay/i.test(t.category+' '+t.note)||Math.abs(t.amount-fr.r.amount)<=fr.r.amount*0.25)){ fr.r.done.push(fr.p); fr.r.u=Date.now(); t.ruleId=fr.r.id; t.period=fr.p; } }
   S.txns.push(t); save(); render();
   if(sx){ const i=spreadInfo(0).find(z=>z.x.id===sx.id); toast(`${sx.name}: ${money(i.left)} left this ${spPer(sx)}`); } else toast(t.type==='expense'?'Logged · '+money(Math.max(0,((dayTarget()||{}).t||0)-spentOn(todayStr())))+' left today':'Recorded');
 }
@@ -549,7 +556,7 @@ const eom=()=>{const k=mk(new Date());return k+'-'+p2(daysIn(k));};
 
 /* ---------- actions ---------- */
 const A={
-  tab(t){tab=t==='activity'?'spend':t;render();window.scrollTo(0,0);},
+  tab(t){tab=(t==='activity'||t==='spend')?(moneyTab='log','money'):t;render();window.scrollTo(0,0);},
   ptab(t){ if(t==='debts'){tab='debts';render();window.scrollTo(0,0);return;} planTab=['goals','know'].includes(t)?t:'know';tab='plan';render();window.scrollTo(0,0);},
   mm(n){month=shiftM(month,n);render();},
   filt(f){actFilter=f;render();},
@@ -558,7 +565,7 @@ const A={
     const R=id=>S.rules.find(r=>r.id===id), D=id=>S.debts.find(d=>d.id===id), c=cash();
     let h=`<p class="mut sm" style="margin-top:0">Only three things are needed: your cash today, your salary and your payday. Everything else is optional and can be added later for more accuracy.</p>
       <label class="f">Cash you hold today, bank + cash (JOD)${numIn('bal',c,'autofocus')}</label>`;
-    {const sr=R('r_salary')||{};h+=`<h2 class="t">Salary</h2><div class="grid" style="margin:0"><label class="f">Net per month${numIn('sal',sr.amount)}</label><label class="f">Pay day${dayIn('salDay',sr.day)}</label></div>`;}
+    {const sr=R('r_salary')||{};h+=`<h2 class="t">Salary</h2><div class="grid" style="margin:0"><label class="f">Net per month${numIn('sal',sr.amount)}</label><label class="f">${sr.flex?'Paid by day (latest)':'Pay day'}${dayIn('salDay',sr.day)}</label></div><label class="sm" style="display:flex;align-items:center;margin-top:10px"><input type="checkbox" name="salFlex" ${sr.flex?'checked':''}>My pay date varies. I’m usually paid by the day above (e.g. the 7th).</label>`;}
     const dbl=(key,rid,did,title,extra)=>{const r=R(rid),d=D(did); if(!r||!d)return ''; return `<h2 class="t">${title}</h2><div class="grid" style="margin:0"><label class="f">Balance owed today${numIn(key+'Bal',debtBal(d))}</label><label class="f">Monthly payment${numIn(key+'Pay',r.amount)}</label><label class="f">Payment day${dayIn(key+'Day',r.day)}</label>${extra(r)}</div><label class="f">Interest % per year (blank if unknown)${numIn(key+'Rate',d.rate||'')}</label>${d.est?`<label class="sm" style="display:flex;align-items:center;margin-top:8px"><input type="checkbox" name="${key}Ok">This balance is correct (it is currently an estimate)</label>`:''}`;};
     { const dh=dbl('loan','r_loan','d_loan','Personal loan',r=>`<label class="f">Last payment month<input name="loanEnd" type="month" value="${r.end||''}"></label>`)+dbl('card','r_card','d_card','Credit card repayment plan',r=>`<label class="f">First payment month<input name="cardStart" type="month" value="${r.start}"></label>`); if(dh)h+=`<details class="dz" style="margin-top:14px"><summary>Optional: your debts (for more accuracy)</summary>${dh}</details>`; }
     if(SA&&!S.debts.length)h+='<p class="sm mut">Add your debts, bills and budgets under Plan after this. Already using RAFIQ elsewhere? Close this and import your backup from the ⚙ menu instead.</p>';
@@ -567,7 +574,7 @@ const A={
       if(!isNaN(bal))S.cash={amount:r3(bal),at:now};
       const setR=(id,amt,day,extra)=>{const r=R(id); if(!r)return; if(num(amt)>0)r.amount=r3(num(amt)); r.day=dayVal(day); r.from=td; r.u=now; Object.assign(r,extra||{});};
       if(!R('r_salary')&&num(f.sal)>0)S.rules.push({id:'r_salary',type:'income',name:'Salary (net)',amount:r3(num(f.sal)),day:null,start:mk(new Date()),end:null,from:td,category:'Salary',active:true,done:[],u:now});
-      setR('r_salary',f.sal,f.salDay);
+      setR('r_salary',f.sal,f.salDay,{flex:!!f.salFlex,early:1});
       for(const[key,rid,did]of[['loan','r_loan','d_loan'],['card','r_card','d_card']]){ const r=R(rid),d=D(did); if(!r||!d)continue;
         setR(rid,f[key+'Pay'],f[key+'Day'],key==='loan'?{end:f.loanEnd||null}:{start:f.cardStart||r.start});
         const nb=num(f[key+'Bal']); if(!isNaN(nb)&&Math.abs(nb-debtBal(d))>0.0005){d.base=r3(nb);d.baseAt=now;d.est=false;} if(f[key+'Ok'])d.est=false;
@@ -1007,12 +1014,8 @@ function stories(dt){
   return L;
 }
 /* ===================== v12: coach UI ===================== */
-function mascot(mood){
-  const col=mood==='bad'?'#FF7A59':mood==='warn'?'#FFC85C':'#17A884', mouth=mood==='bad'?'M40 63 Q50 55 60 63':mood==='warn'?'M41 61 L59 61':'M38 58 Q50 70 62 58';
-  return `<svg class="mascot" viewBox="0 0 100 100" aria-hidden="true"><ellipse cx="50" cy="94" rx="26" ry="4" fill="rgba(27,36,64,.12)"/><path d="M50 10c22 0 38 14 38 38 0 26-16 42-38 42S12 74 12 48C12 24 28 10 50 10z" fill="${col}"/><path d="M50 10c4-6 10-8 16-6" stroke="${col}" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="68" cy="5" r="5" fill="${col}"/>
-    <ellipse cx="38" cy="44" rx="6" ry="${mood==='bad'?6:7}" fill="#1B2440"/><ellipse cx="62" cy="44" rx="6" ry="${mood==='bad'?6:7}" fill="#1B2440"/><circle cx="40" cy="41" r="2" fill="#fff"/><circle cx="64" cy="41" r="2" fill="#fff"/>
-    <path d="${mouth}" stroke="#1B2440" stroke-width="4" fill="none" stroke-linecap="round"/><ellipse cx="28" cy="56" rx="6" ry="4" fill="#fff" opacity=".35"/><ellipse cx="72" cy="56" rx="6" ry="4" fill="#fff" opacity=".35"/>${mood==='bad'?'<path d="M80 30c3 5 3 8 0 10-3-2-3-5 0-10z" fill="#5B8DEF"/>':''}</svg>`;
-}
+function mascot(mood){ const c=mood==='bad'?'#D2473A':mood==='warn'?'#E0A93A':'#C6F36B';
+  return `<svg class="mascot" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#0F1513"/><path d="M16 7.5a8.5 8.5 0 1 1-8.5 8.5" fill="none" stroke="${c}" stroke-width="3.2" stroke-linecap="round"/><circle cx="16" cy="16" r="2.8" fill="${c}"/></svg>`; }
 const balDue=()=>!S.cash||Date.now()-S.cash.at>6*864e5;
 function weekTasks(dt){
   const T=[], t0=midnight(); let n7=0; for(let i=0;i<7;i++){ const d=new Date(t0); d.setDate(d.getDate()-i); const c=S.checkins[dstr(d)]; if(c&&c.done)n7++; }
@@ -1022,36 +1025,127 @@ function weekTasks(dt){
   for(const a of S.actions.filter(a=>!a.done).slice(0,2))T.push({done:false,t:a.text,s:a.due?'by '+a.due:'your commitment',a:`A.toggleAction('${a.id}')`,ck:1});
   return T;
 }
+/* ---------- decision charts ---------- */
+const svgW=340;
+function axisTxt(x,y,t,anchor){ return `<text x="${x}" y="${y}" font-size="10" fill="var(--mut)" text-anchor="${anchor||'middle'}">${esc(t)}</text>`; }
+function runway(days){
+  const fc=forecast(days); if(!fc)return null; const W=svgW,H=150,pl=0,pt=14,pb=20, v=fc.v, n=v.length;
+  let lo=Math.min(0,...v), hi=Math.max(...v,1); const pad=(hi-lo)*.08; hi+=pad; lo-=lo<0?pad:0;
+  const X=i=>pl+(W-pl)*i/(n-1), Y=x=>pt+(H-pt-pb)*(1-(x-lo)/(hi-lo));
+  const line=v.map((x,i)=>(i?'L':'M')+X(i).toFixed(1)+' '+Y(x).toFixed(1)).join('');
+  const ev=occ(days); let g='';
+  for(const o of ev){ if(o.diff<1||o.diff>=n)continue; const x=X(o.diff).toFixed(1);
+    if(o.r.type==='income')g+=`<line x1="${x}" x2="${x}" y1="${pt}" y2="${H-pb}" stroke="var(--c2)" stroke-dasharray="3 3"/><text x="${x}" y="${pt-3}" font-size="9.5" font-weight="700" fill="var(--c2)" text-anchor="${+x>W-30?'end':+x<30?'start':'middle'}">${o.late?'Salary?':'Payday'}</text>`;
+    else g+=`<circle cx="${x}" cy="${Y(v[o.diff]).toFixed(1)}" r="3" fill="var(--card)" stroke="var(--c4)" stroke-width="2"/>`; }
+  const z=Y(0).toFixed(1), lx=X(fc.low.i).toFixed(1), ly=Y(fc.low.v).toFixed(1);
+  const svg=`<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Cash forecast">
+    <defs><linearGradient id="rg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="var(--c2)" stop-opacity=".28"/><stop offset="1" stop-color="var(--c2)" stop-opacity="0"/></linearGradient></defs>
+    ${lo<0?`<rect x="0" y="${z}" width="${W}" height="${(H-pb-z).toFixed(1)}" fill="var(--neg)" opacity=".07"/>`:''}<line x1="0" x2="${W}" y1="${z}" y2="${z}" stroke="var(--mut)" stroke-width="1" opacity=".4"/>
+    <path d="${line}L${X(n-1)} ${z}L0 ${z}Z" fill="url(#rg)"/><path d="${line}" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>${g}
+    <circle cx="${lx}" cy="${ly}" r="4.5" fill="${fc.low.v<0?'var(--neg)':'var(--amb)'}"/>
+    ${axisTxt(2,H-5,'Today','start')}${axisTxt(W/2,H-5,'+'+Math.round(days/2)+'d')}${axisTxt(W-2,H-5,'+'+days+'d','end')}</svg>`;
+  return {svg,fc};
+}
+function sankey(){
+  const pl=plan(shiftM(mk(new Date()),1)), inc=pl.inc; if(!(inc>0))return '';
+  const free=inc-pl.fixed-pl.bud-pl.ann, segs=[['Bills',pl.fixed-pl.debt,'var(--c3)'],['Debt payments',pl.debt,'var(--c4)'],['Spread costs',pl.bud,'var(--c5)'],['Yearly set-aside',pl.ann,'var(--c6)'],[free>=0?'Free to use':'Shortfall',Math.abs(free),free>=0?'var(--c2)':'var(--neg)']].filter(x=>x[1]>0.5);
+  const W=svgW,H=Math.max(150,segs.length*30+20),x0=8,x1=96,x2=W-150,tot=segs.reduce((a,x)=>a+x[1],0), gap=8, avail=H-10-gap*(segs.length-1);
+  let yL=5, yR=5, lastL=-99, g=`<rect x="${x0}" y="5" width="12" height="${H-10}" rx="3" fill="var(--ink)"/>`;
+  for(const[nm,v,c]of segs){ const hL=(H-10)*v/tot, hR=avail*v/tot;
+    g+=`<path d="M${x0+12} ${yL} C${x1+40} ${yL},${x2-40} ${yR},${x2} ${yR} L${x2} ${yR+hR} C${x2-40} ${yR+hR},${x1+40} ${yL+hL},${x0+12} ${yL+hL}Z" fill="${c}" opacity=".32"/><rect x="${x2}" y="${yR}" width="8" height="${Math.max(2,hR)}" rx="2" fill="${c}"/>
+      ${(()=>{ const ly=Math.max(yR+hR/2-4,lastL+28); lastL=ly; return `<text x="${x2+14}" y="${ly}" font-size="11.5" font-weight="600" fill="var(--ink)">${esc(nm)}</text><text x="${x2+14}" y="${ly+13}" font-size="10.5" fill="var(--mut)">${m0(v)} · ${Math.round(v/inc*100)}%</text>`; })()}`;
+    yL+=hL; yR+=hR+gap; }
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Where your income goes">${g}<text x="${x0+18}" y="18" font-size="11" font-weight="700" fill="var(--mut)"> </text></svg>`;
+}
+function burnup(){
+  const k=mk(new Date()), dim=daysIn(k), td=new Date().getDate(), dt=dayTarget(); const cum=[]; let a=0;
+  for(let d=1;d<=td;d++){ const ds=k+'-'+p2(d); a+=S.txns.filter(t=>t.type==='expense'&&t.date===ds&&!t.auto&&!t.recon).reduce((x,t)=>x+t.amount,0); cum.push(a); }
+  const ck=Object.entries(S.checkins).filter(([d,c])=>d.slice(0,7)===k&&c.done); const budget=ck.length?ck.reduce((x,[,c])=>x+c.target,0)/ck.length*dim:(dt?dt.t*dim:0);
+  if(!(budget>0)&&!a)return null; const W=svgW,H=130,pt=10,pb=18, mx=Math.max(budget,a,1)*1.08, X=d=>W*(d-1)/(dim-1), Y=v=>pt+(H-pt-pb)*(1-v/mx);
+  const proj=td>1?a/td*dim:a;
+  const svg=`<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Spending this month versus plan"><line x1="0" y1="${Y(0)}" x2="${W}" y2="${Y(budget).toFixed(1)}" stroke="var(--mut)" stroke-dasharray="4 4" opacity=".7"/>
+    <path d="${cum.map((v,i)=>(i?'L':'M')+X(i+1).toFixed(1)+' '+Y(v).toFixed(1)).join('')}" fill="none" stroke="${proj>budget*1.03?'var(--neg)':'var(--ink)'}" stroke-width="2.4" stroke-linejoin="round"/>
+    ${td<dim?`<line x1="${X(td).toFixed(1)}" y1="${Y(a).toFixed(1)}" x2="${W}" y2="${Y(proj).toFixed(1)}" stroke="${proj>budget*1.03?'var(--neg)':'var(--ink)'}" stroke-dasharray="2 4" stroke-width="2" opacity=".5"/>`:''}
+    <circle cx="${X(td).toFixed(1)}" cy="${Y(a).toFixed(1)}" r="4" fill="var(--lime)" stroke="var(--ink)" stroke-width="2"/>${axisTxt(2,H-4,'1 '+shortM(k),'start')}${axisTxt(W-2,H-4,dim+' '+shortM(k),'end')}</svg>`;
+  return {svg,a,budget,proj,exp:budget*td/dim};
+}
+function catBars(){
+  const k=mk(new Date()), t=totals(k), pv=totals(shiftM(k,-1)), L=Object.entries(t.byCat).sort((a,b)=>b[1]-a[1]).slice(0,6); if(!L.length)return '';
+  const mx=Math.max(...L.map(e=>Math.max(e[1],pv.byCat[e[0]]||0)),1);
+  return L.map(([c,v])=>{ const p=pv.byCat[c]||0, d=v-p; return `<div style="margin:10px 0"><div class="sp sm"><span style="font-weight:600;color:var(--ink)">${esc(c)}</span><span><b>${money(v)}</b>${p?` <span class="${d>0?'neg':'pos'}">${d>0?'▲':'▼'}${m0(Math.abs(d))}</span>`:''}</span></div><div style="position:relative;height:10px;margin-top:5px"><i style="position:absolute;left:0;top:0;height:10px;width:${p/mx*100}%;background:var(--bar);border-radius:4px"></i><i style="position:absolute;left:0;top:2px;height:6px;width:${v/mx*100}%;background:var(--ink);border-radius:3px"></i></div></div>`; }).join('')+`<div class="legend"><span><i class="dot" style="background:var(--ink)"></i>This month</span><span><i class="dot" style="background:var(--bar)"></i>Last month</span></div>`;
+}
+function debtStack(r){
+  const ids=Object.keys(r.PS||{}); if(!ids.length)return ''; const n=Math.min(Math.max(...ids.map(i=>r.PS[i].length)),121), W=svgW,H=160,pt=8,pb=20, cols=['var(--c4)','var(--c3)','var(--c5)','var(--c2)','var(--c6)'];
+  const tot=Array.from({length:n},(_,k)=>ids.reduce((a,i)=>a+(r.PS[i][k]||0),0)), mx=Math.max(...tot,1), X=k=>W*k/Math.max(1,n-1), Y=v=>pt+(H-pt-pb)*(1-v/mx);
+  let base=Array(n).fill(0), g='';
+  ids.forEach((id,j)=>{ const top=base.map((b,k)=>b+(r.PS[id][k]||0)); g+=`<path d="${top.map((v,k)=>(k?'L':'M')+X(k).toFixed(1)+' '+Y(v).toFixed(1)).join('')}${base.map((v,k)=>'L'+X(n-1-k).toFixed(1)+' '+Y(base[n-1-k]).toFixed(1)).join('')}Z" fill="${cols[j%cols.length]}" opacity=".85"/>`; base=top; });
+  const cur=mk(new Date()); let lab=''; for(let k=0;k<n;k++){ const m=shiftM(cur,k); if(k===0||(m.endsWith('-01')&&X(k)>34))lab+=axisTxt(Math.min(W-14,Math.max(14,X(k))),H-5,k===0?'Now':m.slice(0,4)); }
+  for(const o of r.order){ const k=Math.round((new Date(o.m+'-01')-new Date(cur+'-01'))/(30.44*864e5)); if(k>0&&k<n)g+=`<line x1="${X(k).toFixed(1)}" x2="${X(k).toFixed(1)}" y1="${pt}" y2="${H-pb}" stroke="var(--ink)" stroke-dasharray="2 3" opacity=".5"/><circle cx="${X(k).toFixed(1)}" cy="${pt+4}" r="3.5" fill="var(--lime)" stroke="var(--ink)" stroke-width="1.5"/>`; }
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Debt paydown by debt">${g}${lab}</svg><div class="legend">${ids.map((id,j)=>`<span><i class="dot" style="background:${cols[j%cols.length]}"></i>${esc(r.names[id])}</span>`).join('')}<span><i class="dot" style="background:var(--lime);border:1px solid var(--ink)"></i>Paid off</span></div>`;
+}
+function ringHero(spent,tg){
+  const rem=tg-spent, over=rem<-0.005, f=tg>0?clamp(rem/tg,0,1):0, R=80, C=2*Math.PI*R, col=over?'#F06A55':f<0.3?'#E0A93A':'#C6F36B';
+  return `<svg viewBox="0 0 200 200" role="img" aria-label="${money(Math.abs(rem))} JOD ${over?'over':'left'} today"><circle cx="100" cy="100" r="${R}" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="15"/>
+    ${f>0?`<circle cx="100" cy="100" r="${R}" fill="none" stroke="${col}" stroke-width="15" stroke-linecap="round" stroke-dasharray="${(f*C*.999).toFixed(1)} ${C.toFixed(1)}" transform="rotate(-90 100 100)"/>`:''}${over?`<circle cx="100" cy="100" r="${R}" fill="none" stroke="${col}" stroke-width="15" opacity=".9"/>`:''}
+    <text x="100" y="80" text-anchor="middle" font-size="10.5" font-weight="700" letter-spacing="1.5" fill="rgba(255,255,255,.55)">${over?'OVER TODAY':'LEFT TODAY'}</text>
+    <text x="100" y="117" text-anchor="middle" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#fff">${money(Math.abs(rem))}</text>
+    <text x="100" y="137" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.55)">JOD of ${money(tg)}</text></svg>`;
+}
+Object.assign(A,{
+  why(){ const dt=dayTarget(); if(!dt)return; sheet('How today’s amount is worked out',`<div class="card hero" style="margin:0">${whyBox(dt)}</div><p class="sm mut" style="margin-top:12px">Logged spending lowers today’s amount straight away. What you don’t spend today raises the days ahead.</p><div class="row"><button type="button" class="btn sm" onclick="closeSheet();A.adjust()">Set my own daily limit</button><button type="button" class="btn sm" onclick="closeSheet();A.balCheck()">Check my balances</button></div>`,()=>{},'Got it'); },
+  rescueSheet(){ const h=rescueCard(); if(!h)return; sheet('Free up cash now',h.replace(/^<section class="card ?">/,'').replace(/<\/section>$/,''),null,null); }
+});
 V.home=()=>{
   const c=cash(), dt=dayTarget(), td=todayStr(), ci=S.checkins[td], hr=new Date().getHours(), pend=pendingDays();
   let h='';
   if(foundBackup)h+=`<div class="banner"><span>This looks empty, but a Drive backup exists.</span><span class="row" style="flex-wrap:nowrap"><button class="btn sm pri" onclick="A.restoreFound()">Use it</button><button class="btn sm" onclick="A.dismissFound()">No</button></span></div>`;
   if(!S.setupDone||!dt){
-    return h+`<div class="coach" style="margin-top:20px">${mascot('good')}<div class="say"><b>Hi${S.name?' '+esc(S.name):''}! I’m Rafiq, your money coach.</b><br>Answer 3 quick questions and I’ll tell you exactly how much you can spend each day.</div></div><button class="btn go wide big" onclick="${S.setupDone?'A.balCheck()':'A.setup()'}">Let’s start</button>`;
+    return h+`<div class="card hero" style="padding:26px 22px"><div style="width:52px">${mascot('good').replace('class="mascot"','width="52" height="52"')}</div><div class="ey" style="color:rgba(255,255,255,.55);margin-top:18px">RAFIQ · Money coach</div><div style="font-size:26px;font-weight:700;letter-spacing:-.02em;margin:6px 0 8px">Know exactly what you can spend, every day.</div><div class="sm" style="margin-bottom:18px">Three answers to start: cash, salary, payday. Everything else is optional.</div><button class="btn lime big" style="width:100%" onclick="${S.setupDone?'A.balCheck()':'A.setup()'}">Get started</button></div>`;
   }
-  const done=ci&&ci.done, spent=done?ci.spent:dt.spent, tg=done?ci.target:dt.t, rem=tg-spent, f=tg>0?clamp(spent/tg,0,1):1, r=rescue();
-  const mood=rem<-0.005||(r&&r.on)?'bad':(tg>0&&rem/tg<0.3)||balDue()||pend.length?'warn':'good', st=dt.st;
-  let say;
-  if(r&&r.on)say=`Money is tight: you’re <b>${money(r.gap)} JOD short</b> before payday. I found ways to free some up.`;
-  else if(pend.length)say=`Quick question about <b>${dLabel(pend[0].d)}</b> so I keep your cash right.`;
-  else if(balDue())say=`It’s time for your <b>weekly balance check</b>. Screenshot your accounts and I’ll do the rest.`;
-  else if(done)say=rem>=0?`Day closed. You kept <b>${money(rem)} JOD</b>. Nice work, it rolls into the days ahead.`:`Day closed, ${money(-rem)} over. No stress: I’ve spread it over the next ${st.days} days.`;
-  else if(rem<-0.005)say=`You’re <b>${money(-rem)} over</b> today. Try to spend nothing more and I’ll rebalance tomorrow.`;
-  else say=`${hr<12?'Good morning':hr<18?'Hi':'Good evening'}${S.name?' '+esc(S.name):''}! You can spend <b>${money(rem)} JOD</b> today and still be fine until payday${st.payday?' in '+st.payday.diff+' days':''}.`;
-  h+=`<div class="coach">${mascot(mood)}<div class="say">${say}${r&&r.on?`<div class="row" style="margin-top:10px"><button class="btn sm go" onclick="A.rescueSheet()">Show me</button></div>`:pend.length?`<div class="row" style="margin-top:10px"><button class="btn sm go" onclick="A.ciYes('${pend[0].ds}')">On target</button><button class="btn sm" onclick="A.ciAsk('${pend[0].ds}')">Different</button></div>`:balDue()?`<div class="row" style="margin-top:10px"><button class="btn sm go" onclick="A.balCheck()">Start check</button></div>`:''}</div></div>`;
-  let wk=''; for(let i=6;i>=0;i--){ const d=new Date(midnight()); d.setDate(d.getDate()-i); const x=S.checkins[dstr(d)], ok=x&&x.done&&x.spent<=x.target+0.005; wk+=`<span><i class="${x&&x.done?(ok?'ok':'no'):''}${i===0?' td':''}">${x&&x.done?(ok?'✓':'!'):''}</i>${d.toLocaleDateString('en',{weekday:'narrow'})}</span>`; }
-  h+=`<div class="today ${rem<-0.005?'bad':tg>0&&rem/tg<0.3?'warn':''}" onclick="A.why()"><div class="lab">${rem<-0.005?'Over today':done?'Kept today':'Left to spend today'}</div><div class="num">${money(Math.abs(rem))}</div><div class="cur">JOD</div>
-    <div class="jar"><i style="width:${(1-f)*100}%"></i></div><div class="sp sm mut"><span>Spent ${money(spent)}</span><span>Daily amount ${money(tg)}</span></div><div class="wk7">${wk}</div></div>`;
-  h+=`<div class="row" style="flex-wrap:nowrap;margin-bottom:22px"><button class="btn big go" onclick="A.addTxn()">I spent something</button>${done?`<button class="btn big" onclick="dayReview('${td}')">My day</button>`:`<button class="btn big" onclick="A.ciFirst()">${hr>=17?'Close my day':'Check in'}</button>`}</div>`;
-  h+=`<div class="sp" style="margin:0 4px 10px"><h3 style="margin:0;font-size:19px">This week</h3><span class="sm mut">${weekTasks(dt).filter(x=>x.done).length}/${weekTasks(dt).length} done</span></div>`+weekTasks(dt).map(x=>`<div class="task ${x.done?'done':''} ${x.hot&&!x.done?'hot':''}" onclick="${x.a}"><div class="ck">${x.done?'✓':''}</div><div style="min-width:0"><div class="tt">${esc(x.t)}</div><div class="ts">${esc(x.s)}</div></div><div class="gg">›</div></div>`).join('');
-  const owe=S.debts.reduce((a,d)=>a+debtBal(d),0), base=sim(0);
-  if(owe>0)h+=`<div class="task" onclick="A.tab('debts')" style="margin-top:14px">${ibx('debt')}<div style="min-width:0;flex:1"><div class="tt">${money(owe)} JOD of debt left</div><div class="ts">${base.clear?'Debt-free by '+monthLabel(base.end):'Current payments don’t clear it yet'}</div></div><div class="gg">›</div></div>`;
-  h+=`<div style="text-align:center;margin-top:16px"><button class="btn ghost sm" onclick="A.ptab('know')">Check everything RAFIQ knows about me ›</button></div>`;
+  const done=ci&&ci.done, spent=done?ci.spent:dt.spent, tg=done?ci.target:dt.t, rem=tg-spent, r=rescue(), sal=salaryDue(), st=dt.st, pb=playbook();
+  // the one briefing
+  let tone='good', msg, act='';
+  if(r&&r.on){ tone='bad'; msg=`<b>You’re ${money(r.gap)} JOD short before payday.</b> I’ve ranked ${r.levers.length} ways to free up cash, cheapest first.`; act=`<button class="btn sm go" onclick="A.rescueSheet()">See options</button>`; }
+  else if(sal){ tone=sal.late?'warn':'good'; msg=sal.late?`<b>Has your salary arrived?</b> It’s later than usual. Until it does, I’m keeping today’s amount tight.`:`<b>Has your salary arrived?</b> Tell me when it lands and I’ll rebuild the month around it.`; act=`<button class="btn sm go" onclick="A.gotPaid()">Yes, I got paid</button><button class="btn sm" onclick="A.notYet()">Not yet</button>`; }
+  else if(pend.length){ tone='warn'; msg=`<b>Quick check on ${dLabel(pend[0].d)}:</b> did you stay within ${money(ciTarget(pend[0].ds))} JOD?`; act=`<button class="btn sm go" onclick="A.ciYes('${pend[0].ds}')">Yes</button><button class="btn sm" onclick="A.ciAsk('${pend[0].ds}')">Different</button>`; }
+  else if(balDue()){ tone='warn'; msg=`<b>Weekly balance check.</b> Screenshot your accounts; I’ll read them and you confirm.`; act=`<button class="btn sm go" onclick="A.balCheck()">Start · 1 min</button>`; }
+  else if(pb[0]){ const m=pb[0]; tone=m.tone; msg=`<b>${esc(m.title)}.</b> ${esc(first(m.why))}`; act=m.cta?`<button class="btn sm go" onclick="${m.cta.a}">${esc(m.cta.l)}</button>`:''; }
+  else msg=`<b>You’re on track.</b> Spend up to ${money(Math.max(0,rem))} JOD today and you’ll reach payday comfortably.`;
+  h+=`<div class="card hero" style="padding:20px 18px 16px"><div class="sp"><div class="ey" style="color:rgba(255,255,255,.5)">${new Date().toLocaleDateString('en',{weekday:'long',day:'numeric',month:'short'})}</div><button class="btn sm" onclick="A.why()">How?</button></div>
+    <div class="hring" onclick="A.why()">${ringHero(spent,tg)}</div>
+    <div class="row" style="flex-wrap:nowrap;margin-top:12px"><button class="btn lime big" onclick="A.addTxn()">Log spending</button><button class="btn big" onclick="${done?`dayReview('${td}')`:'A.ciFirst()'}">${done?'My day':hr>=17?'Close day':'Check in'}</button></div>
+    <div class="kv"><div onclick="A.balCheck()"><span>Cash</span><b>${money(c)}</b></div><div onclick="A.gotPaid()"><span>${st.payday&&st.payday.late?'Salary':'Payday'}</span><b>${st.payday?(st.payday.late?'Late':st.payday.diff===0?'Today':st.payday.diff+'d'):'—'}</b></div><div onclick="A.tab('debts')"><span>Debt left</span><b>${m0(S.debts.reduce((a,d)=>a+debtBal(d),0))}</b></div></div></div>`;
+  h+=`<div class="brief ${tone}">${mascot(tone)}<div class="tx">${msg}${act?`<div class="row">${act}</div>`:''}</div></div>`;
+  const rw=runway(45);
+  if(rw)h+=`<div class="card" onclick="A.tab('money')" style="cursor:pointer"><div class="sp"><div><h3>Cash runway</h3><div class="sub" style="margin:0">Next 45 days, with bills and payday</div></div><span class="mut">›</span></div><div style="margin-top:10px">${rw.svg}</div><div class="sm ${rw.fc.low.v<0?'neg':'mut'}">Lowest point <b>${money(rw.fc.low.v)}</b> ${rw.fc.low.i?'on '+dLabel(new Date(rw.fc.t0.getTime()+rw.fc.low.i*864e5)):'today'}</div></div>`;
+  const T=weekTasks(dt);
+  h+=`<div class="sp" style="margin:18px 2px 10px"><h3 style="margin:0;font-size:15px">This week</h3><span class="sm mut">${T.filter(x=>x.done).length} of ${T.length} done</span></div>`+T.map(x=>`<div class="task ${x.done?'done':''} ${x.hot&&!x.done?'hot':''}" onclick="${x.a}"><div class="ck">${x.done?'✓':''}</div><div style="min-width:0"><div class="tt">${esc(x.t)}</div><div class="ts">${esc(x.s)}</div></div><div class="gg">›</div></div>`).join('');
+  h+=`<div style="text-align:center;margin-top:14px"><button class="btn ghost sm" onclick="A.ptab('know')">Review everything RAFIQ knows ›</button></div>`;
+  return h;
+};
+/* ---------- Money: decision charts + transactions ---------- */
+let moneyTab='insights';
+V.money=()=>{
+  let h=`<div class="pg"><div class="ey">Money</div><h2>Where you stand</h2></div><div class="seg2">${[['insights','Insights'],['log','Transactions']].map(([k,l])=>`<button class="${moneyTab===k?'on':''}" onclick="moneyTab='${k}';render()">${l}</button>`).join('')}</div>`;
+  if(moneyTab==='log')return h+V.spend().replace(/^<div class="pg">[\s\S]*?<\/h2><\/div>/,'');
+  const rw=runway(60), bu=burnup(), sk=sankey(), cb=catBars(), bh=(S.balHist||[]).slice(-12);
+  if(rw){ const lv=rw.fc.low.v, ld=rw.fc.low.i?dLabel(new Date(rw.fc.t0.getTime()+rw.fc.low.i*864e5)):'today';
+    h+=card(`<div class="ey">Cash runway · 60 days</div><div class="chartH">${money(lv)} <small>lowest, ${ld}</small></div><div class="sub">${lv<0?'You run out before then. Lower daily spending now or move a bill; the Today screen shows options.':lv<50?'Tight but positive. Avoid one-off purchases until after payday.':'You stay positive the whole way. Anything above today’s amount can go to debt or savings.'}</div>${rw.svg}<div class="legend"><span><i class="dot" style="background:var(--ink)"></i>Projected cash</span><span><i class="dot" style="background:var(--c2)"></i>Payday</span><span><i class="dot" style="background:var(--c4)"></i>Bill</span></div>`); }
+  if(bu){ const d=bu.a-bu.exp; h+=card(`<div class="ey">Spending this month</div><div class="chartH">${money(bu.a)} <small>of ~${m0(bu.budget)} planned</small></div><div class="sub">${d>0?`You’re <b class="neg">${money(d)} ahead</b> of plan. At this pace you’ll spend ~${m0(bu.proj)}.`:`You’re <b class="pos">${money(-d)} under</b> plan. At this pace you’ll spend ~${m0(bu.proj)}.`}</div>${bu.svg}<div class="legend"><span><i class="dot" style="background:var(--ink)"></i>Actual</span><span><i class="dot" style="background:var(--mut)"></i>Plan</span><span><i class="dot" style="background:var(--lime);border:1px solid var(--ink)"></i>Today</span></div>`); }
+  if(sk){ const pl=plan(shiftM(mk(new Date()),1)), fr=pl.inc-pl.fixed-pl.bud-pl.ann; h+=card(`<div class="ey">Your typical month</div><div class="chartH">${m0(Math.abs(fr))} JOD <small>${fr>=0?'free after commitments':'short every month'}</small></div><div class="sub">${fr>=0?`Out of ${m0(pl.inc)} income, ${Math.round((pl.inc-fr)/pl.inc*100)}% is already committed. The free part covers day-to-day life, savings and extra debt.`:'Your commitments exceed your income. Cut a spread cost or talk to your bank about the payment plan.'}</div>${sk}`); }
+  if(cb)h+=card(`<div class="ey">By category</div><div class="sub" style="margin-top:4px">This month against last month. Arrows show the change.</div>${cb}`);
+  if(bh.length>=2){ h+=card(`<div class="ey">Balance checks</div><div class="chartH">${money(bh[bh.length-1].total)} <small>latest confirmed</small></div>${lineChart([{v:bh.map(x=>x.total),c:'var(--ink)',fill:1}],{h:100,labels:[{i:0,t:new Date(bh[0].at).toLocaleDateString('en',{day:'numeric',month:'short'})},{i:bh.length-1,t:'Latest'}]})}`); }
+  h+=`<div class="row" style="justify-content:center;margin-top:6px"><button class="btn sm" onclick="A.ptab('know')">What RAFIQ knows</button><button class="btn sm" onclick="A.ptab('goals')">Savings goals</button><button class="btn sm" onclick="A.importStatement()">Upload statement</button></div>`;
   return h;
 };
 Object.assign(A,{
-  why(){ const dt=dayTarget(); if(!dt)return; sheet('How today’s amount is worked out',`<div class="card hero" style="margin:0">${whyBox(dt)}</div><p class="sm mut" style="margin-top:12px">Logged spending lowers today’s amount straight away. What you don’t spend today raises the days ahead.</p><div class="row"><button type="button" class="btn sm" onclick="closeSheet();A.adjust()">Set my own daily limit</button><button type="button" class="btn sm" onclick="closeSheet();A.balCheck()">Check my balances</button></div>`,()=>{},'Got it'); },
-  rescueSheet(){ const h=rescueCard(); if(!h)return; sheet('Free up cash now',h.replace(/^<section class="card ?">/,'').replace(/<\/section>$/,''),null,null); }
+  gotPaid(){ const fr=salaryDue()||(()=>{ const r=S.rules.find(x=>x.type==='income'&&x.active); if(!r)return null; const d=new Date().getDate(), cur=mk(new Date()); return {r,p:d<=15?cur:shiftM(cur,1)}; })();
+    if(!fr)return A.addTxn('income');
+    sheet('Salary arrived',`<p class="sm mut" style="margin-top:0">Enter what actually landed in your account. RAFIQ rebuilds your daily amount and the month’s plan around it.</p><input name="a" type="number" inputmode="decimal" step="0.001" class="amt" value="${fr.r.amount}"><label class="f">Date<input name="d" type="date" value="${todayStr()}"></label>${fr.r.flex?'':`<label class="sm" style="display:flex;align-items:center;margin-top:12px"><input type="checkbox" name="fx" checked>My pay date varies each month (usually by the ${fr.r.day||7}${(fr.r.day||7)===1?'st':(fr.r.day||7)===2?'nd':(fr.r.day||7)===3?'rd':'th'})</label>`}`,
+      f=>{ const a=num(f.a); if(!(a>0))throw new Error('Enter the amount you received.'); const now=Date.now(); if(f.fx){fr.r.flex=true;fr.r.early=1;if(!fr.r.day||fr.r.day>10)fr.r.day=7;}
+        if(!fr.r.done.includes(fr.p))fr.r.done.push(fr.p); fr.r.u=now; S.txns.push({id:uid(),type:'income',amount:r3(a),date:f.d||todayStr(),category:'Salary',note:fr.r.name,ruleId:fr.r.id,period:fr.p,created:now}); if(Math.abs(a-fr.r.amount)>0.5&&a>0)fr.r.amount=r3(a);
+        save(); render(); toast('Salary recorded · plan updated'); },'Record salary'); },
+  notYet(){ meta.salSnooze=todayStr(); saveMeta(); toast('OK. I’ll keep today’s amount tight.'); }
 });
 /* ---------- Debts ---------- */
 function mountain(pc,label){
@@ -1063,18 +1157,20 @@ function mountain(pc,label){
     <circle cx="${mx.toFixed(1)}" cy="${my.toFixed(1)}" r="11" fill="#fff" stroke="#17A884" stroke-width="5"/><text x="${Math.min(250,mx+16).toFixed(0)}" y="${(my+4).toFixed(0)}" font-size="12" font-weight="800" fill="#1B2440">${label}</text></svg>`;
 }
 V.debts=()=>{
-  const act=S.debts.filter(d=>debtBal(d)>0), owe=act.reduce((a,d)=>a+debtBal(d),0), base=sim(0), paid=S.txns.filter(t=>t.type==='debt').reduce((a,t)=>a+t.amount,0), st=S.debts.reduce((a,d)=>a+Math.max(d.original||0,d.base||0,debtBal(d)),0), pc=pct(Math.max(paid,st-owe),Math.max(owe+paid,st)), nm=shiftM(mk(new Date()),1);
-  const per=act.reduce((a,d)=>a+sched(d,nm,''),0);
-  let h=`<div class="pg"><div class="ey">Debts</div><h2>${owe>0?'Your climb to debt-free':S.debts.length?'You’re debt-free 🎉':'No debts recorded'}</h2></div>`;
-  if(owe>0)h+=`<div class="mtn"><div class="sp"><div><div class="ey" style="color:inherit;opacity:.6">Debt-free</div><div class="big2">${base.clear?monthLabel(base.end):'Not yet'}</div></div><div style="text-align:right"><div class="ey" style="color:inherit;opacity:.6">Left</div><div style="font-size:20px;font-weight:800">${money(owe)}</div></div></div><div class="sm" style="opacity:.75;margin-top:2px">${money(per)} JOD a month in payments${base.clear?' · '+base.months+' months to go':''}</div>${mountain(pc,Math.round(pc)+'%')}</div>`;
+  const act=S.debts.filter(d=>debtBal(d)>0), owe=act.reduce((a,d)=>a+debtBal(d),0), base=sim(0), nm=shiftM(mk(new Date()),1), per=act.reduce((a,d)=>a+sched(d,nm,''),0);
+  const paid=S.txns.filter(t=>t.type==='debt').reduce((a,t)=>a+t.amount,0), st=Math.max(owe+paid,S.debts.reduce((a,d)=>a+Math.max(d.original||0,d.base||0,debtBal(d)),0)), pc=pct(st-owe,st);
+  let h=`<div class="pg"><div class="ey">Debts</div><h2>${owe>0?'Path to debt-free':S.debts.length?'Debt-free':'No debts recorded'}</h2></div>`;
+  if(owe>0){ h+=`<div class="card hero"><div class="sp" style="align-items:flex-end"><div><div class="ey" style="color:rgba(255,255,255,.5)">Debt-free by</div><div style="font-size:24px;font-weight:700;letter-spacing:-.02em">${base.clear?monthLabel(base.end):'Not on this plan'}</div></div><div style="text-align:right"><div class="ey" style="color:rgba(255,255,255,.5)">Remaining</div><div style="font-size:20px;font-weight:700">${money(owe)}</div></div></div>
+      <div style="margin:16px 0 6px;height:10px;border-radius:6px;background:rgba(255,255,255,.1);overflow:hidden"><i style="display:block;height:100%;width:${Math.max(2,pc)}%;background:var(--lime);border-radius:6px"></i></div><div class="sp sm"><span>${Math.round(pc)}% paid</span><span>${money(per)} JOD / month${base.clear?' · '+base.months+' months':''}</span></div></div>`;
+    h+=card(`<div class="ey">Paydown forecast</div><div class="sub" style="margin-top:4px">Each band is one debt shrinking with your scheduled payments. When one clears, its payment moves to the next.</div>${debtStack(base)}`); }
   h+=S.debts.map(d=>{ const b=debtBal(d), s0=Math.max(d.original||0,d.base||0,b), nx=occ(62).find(o=>o.r.type==='debt'&&o.r.debtId===d.id), p=pct(s0-b,s0);
-    return `<div class="dcard"><div class="sp"><div style="min-width:0"><div style="font-weight:800;font-size:17px">${esc(d.name)}${d.est?'<span class="tag">estimate</span>':''}</div><div class="sm mut">${d.rate?d.rate+'% interest':'interest not set'}${d.minPay?' · '+money(d.minPay)+'/month':''}</div></div>${miniRing(p/100,'var(--acc)',Math.round(p)+'%')}</div>
-      <div class="big2" style="margin:8px 0 2px">${b<=0?'<span class="pos">Paid off</span>':money(b)+' <span class="sm mut">JOD</span>'}</div><div class="sm mut">${b>0&&nx?'Next payment '+money(nx.r.amount)+' on '+dLabel(nx.dt)+' · recorded automatically':b>0?'No payment scheduled — add one under bills':''}</div>
-      <div class="row" style="margin-top:12px"><button class="btn sm go" onclick="A.payDebt('${d.id}')">I paid</button><button class="btn sm" onclick="A.debtBal('${d.id}')">Update balance</button><button class="btn sm" onclick="A.debtForm('${d.id}')">Edit</button></div></div>`; }).join('');
+    return `<div class="dcard"><div class="sp"><div style="min-width:0"><div style="font-weight:700;font-size:15.5px">${esc(d.name)}${d.est?'<span class="tag">estimate</span>':''}</div><div class="sm mut">${d.rate?d.rate+'% interest':'Interest rate not set'}${d.minPay?' · '+money(d.minPay)+'/mo':''}</div></div><div style="text-align:right"><div style="font-size:19px;font-weight:700">${b<=0?'<span class="pos">Paid</span>':money(b)}</div><div class="sm mut">${Math.round(p)}% paid</div></div></div>
+      <div class="bar" style="margin:10px 0 8px"><i style="width:${p}%"></i></div><div class="sm mut">${b>0&&nx?'Next: '+money(nx.r.amount)+' on '+dLabel(nx.dt)+' · automatic':b>0?'No payment scheduled':''}</div>
+      <div class="row" style="margin-top:10px"><button class="btn sm go" onclick="A.payDebt('${d.id}')">Record payment</button><button class="btn sm" onclick="A.debtBal('${d.id}')">Update balance</button><button class="btn sm ghost" onclick="A.debtForm('${d.id}')">Edit</button></div></div>`; }).join('');
   if(act.length){ const rec=recommend(); if(slideVal==null)slideVal=rec.extra>0?rec.extra:0; const mx=Math.max(300,Math.ceil(Math.max(rec.free||0,slideVal)/50)*50);
-    h+=card(`<h3>Get there faster</h3><div class="sm mut" style="margin:-6px 0 10px">Slide to see what paying a little extra each month does.</div><div id="simbox">${simBox(slideVal)}</div>
-      <label class="f" style="margin-top:14px">Extra per month: <b id="slv" style="color:var(--ink)">${m0(slideVal)}</b> JOD${rec.extra>0?` <span class="tag">I suggest ${m0(rec.extra)}</span>`:''}<input type="range" min="0" max="${mx}" step="10" value="${slideVal}" oninput="A.slide(this.value)"></label>
-      <button class="btn go wide" onclick="A.commitExtra(slideVal)">Make this extra payment automatic</button>`); }
+    h+=card(`<div class="ey">Accelerate</div><div class="sub" style="margin-top:4px">See what a fixed extra payment each month changes.</div><div id="simbox">${simBox(slideVal)}</div>
+      <label class="f" style="margin-top:14px">Extra per month: <b id="slv" style="color:var(--ink)">${m0(slideVal)}</b> JOD${rec.extra>0?` <span class="tag">recommended ${m0(rec.extra)}</span>`:''}<input type="range" min="0" max="${mx}" step="10" value="${slideVal}" oninput="A.slide(this.value)"></label>
+      <button class="btn go wide" onclick="A.commitExtra(slideVal)">Schedule this extra payment</button>`); }
   h+=`<button class="btn wide" onclick="A.debtForm()">+ Add a debt</button>`;
   return h;
 };
@@ -1373,7 +1469,7 @@ function scenHtml(){
 V.partner=()=>{
   const pb=playbook(), dt=dayTarget(), hl=health(), open=S.actions.filter(a=>!a.done), hr=new Date().getHours();
   const R=(cls,k,body,btns)=>`<div class="bub r ${cls||''}">${k?`<div class="k">${k}</div>`:''}${body}${btns?`<div class="row">${btns}</div>`:''}</div>`;
-  let h=`<div class="pg"><div class="ey">Coach</div><h2>RAFIQ</h2></div><div class="chat"><div class="who">${LOGO_SM} RAFIQ · ${new Date().toLocaleDateString('en',{weekday:'short',day:'numeric',month:'short'})}</div>`;
+  let h=`<div class="pg"><div class="ey">Coach</div><h2>Ask RAFIQ</h2></div><div class="chat"><div class="who">${LOGO_SM} RAFIQ · ${new Date().toLocaleDateString('en',{weekday:'short',day:'numeric',month:'short'})}</div>`;
   h+=R('',null,dt?`${hr<12?'Morning':hr<18?'Afternoon':'Evening'}${S.name?' '+esc(S.name):''}. You can spend <b>${money(Math.max(0,dt.t-dt.spent))} JOD</b> today. Your health score is <b>${hl.score}/100</b>.`:'Hi. Tell me your cash, salary and payday and I’ll start coaching you.',dt?'':`<button class="btn sm pri" onclick="A.setup()">Start</button>`);
   pb.slice(0,4).forEach((m,i)=>{ h+=R(m.tone,({bad:'Urgent',warn:'Important',good:'Opportunity'})[m.tone],`<b>${esc(m.title)}</b><div style="margin-top:3px;opacity:.85">${esc(m.why)}</div>`,`${m.cta?`<button class="btn sm pri" onclick="${m.cta.a}">${esc(m.cta.l)}</button>`:''}${committed(m.key)?'<span class="sm pos">✓ Committed</span>':`<button class="btn sm" onclick="A.commit(${i})">I’ll do it</button>`}`); });
   if(pb.length>4)h+=R('',null,`${pb.length-4} more things, once these are done.`,'');
@@ -1488,11 +1584,11 @@ function snapshot(){
 }
 
 /* ---------- shell ---------- */
-const ICONS={debts:'<path d="M3 20l6-9 4 5 3-4 5 8z"/><path d="M16 4v4l3-1.5z"/>',spend:'<path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6"/>',home:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',activity:'<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',plan:'<rect x="2" y="6" width="20" height="14" rx="3"/><path d="M2 10h20M16 15h2"/>',partner:'<path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/>'};
-const LABEL={home:'Today',debts:'Debts',spend:'Spending',partner:'Coach'};
+const ICONS={money:'<path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/>',debts:'<path d="M3 20l6-9 4 5 3-4 5 8z"/><path d="M16 4v4l3-1.5z"/>',spend:'<path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6"/>',home:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',activity:'<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',plan:'<rect x="2" y="6" width="20" height="14" rx="3"/><path d="M2 10h20M16 15h2"/>',partner:'<path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/>'};
+const LABEL={home:'Today',money:'Money',debts:'Debts',partner:'Coach'};
 function render(){
   const nb=k=>`<button class="${tab===k?'on':''}" onclick="A.tab('${k}')"><svg viewBox="0 0 24 24">${ICONS[k]}</svg>${LABEL[k]}</button>`;
-  $('#nav').innerHTML=nb('home')+nb('debts')+`<button class="plus" onclick="A.addMenu()" aria-label="Add"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>`+nb('spend')+nb('partner');
+  $('#nav').innerHTML=nb('home')+nb('money')+`<button class="plus" onclick="A.addMenu()" aria-label="Add"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>`+nb('debts')+nb('partner');
   const keep=($('#ci')||{}).value; $('#app').innerHTML=V[tab]();
   if(tab==='partner'){paintChat(); if(keep&&$('#ci'))$('#ci').value=keep;}
   setStatus();
