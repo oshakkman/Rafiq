@@ -90,11 +90,12 @@ details.dz summary{list-style:none;cursor:pointer;padding:12px 16px;border-radiu
 .chartH{font-size:22px;font-weight:700;letter-spacing:-.02em;margin:2px 0 2px}.chartH small{font-size:13px;font-weight:600;color:var(--mut)}
 .bento{display:grid;grid-template-columns:1fr 1fr;gap:10px}.bt{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;cursor:pointer;min-height:110px;display:flex;flex-direction:column}.bt.w{grid-column:span 2}.bt .k{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}.bt .v{font-size:22px;font-weight:700;margin-top:6px}.bt .s{font-size:12.5px;color:var(--mut)}.bt.dark{background:var(--hero);color:#fff}.bt.lime{background:var(--lime);color:#0F1513}
 @media(prefers-color-scheme:dark){nav button.plus{background:var(--lime);color:#0F1513}.btn.pri,.btn.go{background:var(--lime);color:#0F1513;border-color:var(--lime)}.hero{background:#1A201D;border:1px solid var(--line)}}
+#toast{white-space:normal;max-width:calc(100vw - 32px);text-align:center}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header><div class="brand"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect width="32" height="32" rx="10" fill="#0F1513"/><path d="M16 7.5a8.5 8.5 0 1 1-8.5 8.5" fill="none" stroke="#C6F36B" stroke-width="3.2" stroke-linecap="round"/><circle cx="16" cy="16" r="2.8" fill="#C6F36B"/></svg><div><b>RAFIQ</b><small>Money coach</small></div></div><span class="pill" id="st">Loading…</span><button class="ib" onclick="A.data()" aria-label="Settings and backup"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button></header>
+  <header><div class="brand"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect width="32" height="32" rx="10" fill="#0F1513"/><path d="M16 7.5a8.5 8.5 0 1 1-8.5 8.5" fill="none" stroke="#C6F36B" stroke-width="3.2" stroke-linecap="round"/><circle cx="16" cy="16" r="2.8" fill="#C6F36B"/></svg><div><b>RAFIQ</b><small>Money coach</small></div></div><span class="pill" id="st">Loading…</span><button class="ib" onclick="A.sync()" aria-label="Sync"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16m0-4a9 9 0 0 1 15.5-6.2L21 8M3 21v-5h5M21 3v5h-5"/></svg></button><button class="ib" onclick="A.data()" aria-label="Settings and backup"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button></header>
   <main id="app"></main>
 </div>
 <nav><div class="in" id="nav"></div></nav>
@@ -622,7 +623,7 @@ const A={
       <label class="f">Original amount (optional, for progress)${numIn('orig',d.original)}</label>
       <label class="f">Interest % per year (0 if none/unknown)${numIn('rate',d.rate)}</label>
       <label class="f">Minimum monthly payment (JOD)${numIn('min',d.minPay)}</label>
-      <p class="sm mut">To pay it automatically each month, add a recurring Debt payment under Plan → Recurring.</p>`,
+      <p class="sm mut">To pay it automatically each month, add it as a bill: + → Bill on a date → Debt payment.</p>`,
       f=>{const name=(f.name||'').trim(),bal=num(f.bal),now=Date.now(); if(!name)throw new Error('Enter a name.'); if(isNaN(bal)||bal<0)throw new Error('Enter the balance owed.');
         const o={name,original:isNaN(num(f.orig))?null:r3(num(f.orig)),rate:isNaN(num(f.rate))?0:num(f.rate),minPay:isNaN(num(f.min))?0:r3(num(f.min)),u:now};
         if(id){ const x=S.debts.find(y=>y.id===id); if(Math.abs(bal-debtBal(x))>0.0005){x.base=r3(bal);x.baseAt=now;x.est=false;} Object.assign(x,o); }
@@ -740,7 +741,7 @@ const A={
     const saBox=`<div class="card" style="box-shadow:none"><h3>Backup</h3>
         <p class="sm" style="margin:0 0 8px">Your data lives only on this iPhone, inside this app. Removing the app from your Home Screen deletes it, so save a backup file every week. Last backup: <b>${meta.lastFileBackup?when(meta.lastFileBackup):'never'}</b>.</p>
         <div class="row"><button type="button" class="btn pri" onclick="A.exportJson()">Save backup file</button><button type="button" class="btn" onclick="A.copyJson()">Copy backup</button></div></div>`;
-    sheet('Settings & sync',`${OFF?offBox:SA?saBox:onBox}
+    sheet('Settings & sync',`<button type="button" class="btn go wide" style="margin:0 0 14px" onclick="A.sync()">Sync with my other RAFIQ</button>${OFF?offBox:SA?saBox:onBox}
       <div class="row" style="margin-top:12px"><button type="button" class="btn" onclick="A.setup()">Setup</button><button type="button" class="btn" onclick="A.setBal()">${c==null?'Set cash balance':'Cash: '+money(c)}</button></div>
       <h2 class="t">Import a backup</h2>
       ${OFF?'':'<input type="file" id="imf" accept=".json,application/json,text/plain">'}
@@ -785,10 +786,13 @@ const A={
     try{ const dl=await claude.use('downloads'); if(!dl)throw 0; await dl.save({filename:`RAFIQ-transactions-${todayStr()}.csv`,data:rows}); }
     catch(e){ if(e&&e.code==='declined')return; toast('Download unavailable here'); }
   },
-  importText(text){
+  importText(text,quiet){
+    text=String(text||'').trim(); const m=text.match(/\{[\s\S]*\}/); if(m)text=m[0];
     let o; try{o=JSON.parse(text);}catch(e){ const er=$('#serr'); if(er)er.textContent='That is not valid backup data.'; else toast('Not valid backup data'); return; }
     const d=o&&o.data&&Array.isArray(o.data.txns)?o.data:o;
-    if(!d||!Array.isArray(d.txns)||!Array.isArray(d.debts)){ const er=$('#serr'); if(er)er.textContent='This does not look like a RAFIQ backup.'; return; }
+    if(o&&o.rafiqPatch)return A.patchPreview(o);
+    if(!d||!Array.isArray(d.txns)||!Array.isArray(d.debts)){ const er=$('#serr'); if(er)er.textContent='This does not look like RAFIQ data.'; else toast('Not RAFIQ data'); return; }
+    if(quiet){ undoSnap=JSON.stringify(S); const n=mergeIn(normalise(d)); runRules(); save(); closeSheet(); render(); toast(`Synced · ${n} new entr${n===1?'y':'ies'}`); return; }
     A.importObj(d);
   },
   importObj(d){
@@ -1105,7 +1109,7 @@ V.home=()=>{
   const done=ci&&ci.done, spent=done?ci.spent:dt.spent, tg=done?ci.target:dt.t, rem=tg-spent, r=rescue(), sal=salaryDue(), st=dt.st, pb=playbook();
   // the one briefing
   let tone='good', msg, act='';
-  if(r&&r.on){ tone='bad'; msg=`<b>You’re ${money(r.gap)} JOD short before payday.</b> I’ve ranked ${r.levers.length} ways to free up cash, cheapest first.`; act=`<button class="btn sm go" onclick="A.rescueSheet()">See options</button>`; }
+  if(r&&r.on){ tone='bad'; msg=r.levers.length?`<b>You’re ${money(r.gap)} JOD short before payday.</b> I’ve ranked ${r.levers.length} way${r.levers.length>1?'s':''} to free up cash, cheapest first.`:`<b>You’re ${money(r.gap)} JOD short of ${money(r.fl)} a day until payday.</b> Nothing scheduled can be moved, so spend only on essentials and don’t use the card.`; act=`<button class="btn sm go" onclick="A.rescueSheet()">${r.levers.length?'See options':'What can I do?'}</button>`; }
   else if(sal){ tone=sal.late?'warn':'good'; msg=sal.late?`<b>Has your salary arrived?</b> It’s later than usual. Until it does, I’m keeping today’s amount tight.`:`<b>Has your salary arrived?</b> Tell me when it lands and I’ll rebuild the month around it.`; act=`<button class="btn sm go" onclick="A.gotPaid()">Yes, I got paid</button><button class="btn sm" onclick="A.notYet()">Not yet</button>`; }
   else if(pend.length){ tone='warn'; msg=`<b>Quick check on ${dLabel(pend[0].d)}:</b> did you stay within ${money(ciTarget(pend[0].ds))} JOD?`; act=`<button class="btn sm go" onclick="A.ciYes('${pend[0].ds}')">Yes</button><button class="btn sm" onclick="A.ciAsk('${pend[0].ds}')">Different</button>`; }
   else if(balDue()){ tone='warn'; msg=`<b>Weekly balance check.</b> Screenshot your accounts; I’ll read them and you confirm.`; act=`<button class="btn sm go" onclick="A.balCheck()">Start · 1 min</button>`; }
@@ -1146,6 +1150,39 @@ Object.assign(A,{
         if(!fr.r.done.includes(fr.p))fr.r.done.push(fr.p); fr.r.u=now; S.txns.push({id:uid(),type:'income',amount:r3(a),date:f.d||todayStr(),category:'Salary',note:fr.r.name,ruleId:fr.r.id,period:fr.p,created:now}); if(Math.abs(a-fr.r.amount)>0.5&&a>0)fr.r.amount=r3(a);
         save(); render(); toast('Salary recorded · plan updated'); },'Record salary'); },
   notYet(){ meta.salSnooze=todayStr(); saveMeta(); toast('OK. I’ll keep today’s amount tight.'); }
+});
+/* ---------- one-tap sync between versions (clipboard) ---------- */
+Object.assign(A,{
+  sync(){
+    sheet('Sync with your other RAFIQ',`<p class="sm mut" style="margin-top:0">Moves everything between this RAFIQ and your other one in two taps. Nothing is lost: entries are merged, never overwritten.</p>
+      <div class="dcard"><div class="sp"><div><b>1 · Send from here</b><div class="sm mut">Copies all your data to the clipboard</div></div><button type="button" class="btn go" onclick="A.syncSend()">Send</button></div></div>
+      <div class="dcard"><b>2 · Receive here</b><div class="sm mut" style="margin-bottom:8px">After tapping Send in the other version${OFF||SA?'':', long-press the box below and choose Paste'}</div>
+        ${OFF||SA?`<button type="button" class="btn go wide" style="margin-top:0" onclick="A.syncRecv()">Receive</button>`:''}<textarea id="synct" rows="2" placeholder="Paste here" style="${OFF||SA?'margin-top:10px':''}"></textarea></div>
+      <p class="sm mut">Also accepts update codes (for example balances read from your bank screenshots).</p>`,null,null);
+    const t=$('#synct'); if(t){ t.addEventListener('paste',()=>setTimeout(()=>A.importText(t.value,true),30)); t.addEventListener('input',()=>{ if(t.value.length>40)A.importText(t.value,true); }); }
+  },
+  async syncSend(){ const j=JSON.stringify(S);
+    if(OFF&&!SA){ bridge('copy'); return; }
+    try{ await navigator.clipboard.writeText(j); toast('Copied. Open the other RAFIQ → Sync → Receive'); }
+    catch(e){ const t=$('#synct'); if(t){t.value=j;t.select();} toast('Select the text in the box and copy it'); } },
+  async syncRecv(){ try{ const t=await navigator.clipboard.readText(); if(t&&t.length>20)return A.importText(t,true); toast('Clipboard is empty. Tap Send in the other version first.'); }catch(e){ toast('Paste into the box instead'); const t=$('#synct'); if(t)t.focus(); } },
+  patchPreview(o){
+    const norm=x=>String(x||'').toLowerCase().replace(/[^a-z0-9]/g,''), acc=(o.accounts||[]).filter(a=>typeof a.bal==='number'), dps=(o.debts||[]).filter(d=>typeof d.bal==='number');
+    const find=n=>S.debts.find(d=>norm(d.name)===norm(n))||S.debts.find(d=>norm(d.name).includes(norm(n))&&!/restructur/i.test(d.name));
+    const c=cash(), tot=acc.filter(a=>a.on!==false).reduce((x,a)=>x+a.bal,0);
+    sheet('Update from your bank',`<p class="sm mut" style="margin-top:0">${o.asOf?'Balances as of <b>'+esc(o.asOf)+'</b>. ':''}Untick anything that shouldn’t change.</p>
+      ${acc.length?`<h2 class="t" style="margin-top:6px">Cash</h2>${acc.map((a,i)=>`<label class="it" style="cursor:pointer"><input type="checkbox" name="a${i}" ${a.on===false?'':'checked'}><div class="tx"><div>${esc(a.name)}</div>${a.note?`<div class="sm wrn">${esc(a.note)}</div>`:''}</div><div class="am">${money(a.bal)}</div></label>`).join('')}<div class="ins">RAFIQ has your cash at <b>${money(c)}</b>. The ticked accounts total <b>${money(tot)}</b>; the difference is recorded so your history stays honest.</div>`:''}
+      ${dps.length?`<h2 class="t">Debts</h2>${dps.map((d,i)=>{ const x=find(d.name); return `<label class="it" style="cursor:pointer"><input type="checkbox" name="d${i}" checked><div class="tx"><div>${esc(x?x.name:d.name)}${x?'':'<span class="tag">new</span>'}</div><div class="sm mut">${x?money(debtBal(x))+' → ':''}<b style="color:var(--ink)">${money(d.bal)}</b>${d.note?' · '+esc(d.note):''}</div></div></label>`; }).join('')}`:''}
+      ${o.salary?`<h2 class="t">Salary</h2><label class="it" style="cursor:pointer"><input type="checkbox" name="sal" checked><div class="tx"><div>Pay date varies</div><div class="sm mut">Paid by the ${o.salary.by||7}th at the latest. RAFIQ will ask when it lands.</div></div></label>`:''}`,
+      f=>{ undoSnap=JSON.stringify(S); const now=Date.now(); let ch=[];
+        const on=acc.filter((a,i)=>f['a'+i]);
+        if(on.length){ const t=on.reduce((x,a)=>x+a.bal,0), cc=cash(), diff=cc==null?0:r3(t-cc);
+          if(cc!=null&&Math.abs(diff)>=0.01)S.txns.push({id:uid(),type:diff<0?'expense':'income',amount:Math.abs(diff),date:todayStr(),category:diff<0?'Untracked spending':'Balance correction',note:'Bank update',recon:true,created:now-1});
+          S.cash={amount:r3(t),at:now}; S.accounts=on.map(a=>({id:uid(),name:a.name,type:a.type||'current',bal:r3(a.bal),at:now,u:now})); S.balHist.push({at:now,total:r3(t)}); ch.push('cash '+money(t)); }
+        dps.forEach((d,i)=>{ if(!f['d'+i])return; const x=find(d.name); if(x){ x.base=r3(d.bal); x.baseAt=now; x.est=false; x.u=now; } else S.debts.push({id:uid(),name:d.name,base:r3(d.bal),baseAt:now,original:null,rate:d.rate||0,minPay:d.minPay||0,est:false,u:now}); ch.push(d.name); });
+        if(o.salary&&f.sal){ const r=S.rules.find(x=>x.type==='income'&&x.active); if(r){ r.flex=true; r.early=1; r.day=o.salary.by||7; r.u=now; ch.push('flexible payday'); } }
+        save(); render(); toast('Updated: '+ch.join(' · ')); },'Apply update');
+  }
 });
 /* ---------- Debts ---------- */
 function mountain(pc,label){
